@@ -1,0 +1,17 @@
+.App{
+    background-image: url(https://img.freepik.com/foto-gratis/vista-superior-viejos-periodicos-franceses_23-2149318857.jpg?t=st=1731896149~exp=1731899749~hmac=d04d0311c01194add93481ea4fd3158cf4f4cce447b5bf326fb9a17f8ec0faaa&w=1380);
+    height: 100vh;
+}
+
+.contenedor-principal{
+    width: 1440px;
+    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .6);
+    overflow-y: auto;
+}
