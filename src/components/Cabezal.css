@@ -1,0 +1,52 @@
+.cabezal{ 
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 60px;
+    align-items: center;
+    position: relative;
+    min-height: 130px;
+    border-bottom: 3px dotted #d7d7d7;
+}
+
+#titulo-pagina{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    font-size: 70px;
+    color: #BD5050;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+
+.barra-navegacion{
+    border-bottom: 3px dotted #d7d7d7;
+    display: flex;
+}
+
+.barra-navegacion .boton-navegacion{
+    flex-grow: 1;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    border: none;
+    background-color: white;
+}
+
+.barra-navegacion .boton-navegacion:hover{
+    background-color: #f1f1f1;
+}
+
+.nav-1{
+    height: 60px;
+}
+
+.nav-2{
+    height: 50px;
+}
+
+.btn-gris{
+    color: gray;
+}
