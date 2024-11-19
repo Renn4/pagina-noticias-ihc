@@ -30,7 +30,9 @@ function App() {
 
         <div className='contenedor-grid-noticias'>
           <div className='fila-noticias'>
-            <div className='carta-noticia'></div>
+            <div className='carta-noticia'>
+              <div className='imagen-noticia'></div>
+            </div>
             <div className='carta-noticia'></div>
             <div className='carta-noticia'></div>
             <div className='carta-noticia'></div>
