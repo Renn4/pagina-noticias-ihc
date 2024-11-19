@@ -47,6 +47,10 @@ function App() {
           </div>
         </div>
 
+        <div className='pie'>
+          bru
+        </div>
+
       </div>
     </div>
   );
