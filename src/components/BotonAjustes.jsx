@@ -2,8 +2,9 @@ import React from "react";
 import './BotonAjustes.css'
 import { useState } from "react";
 import { useRef } from "react";
+import SettingsIcon from '@mui/icons-material/Settings';
 
-function BotonAjustes() {
+function BotonAjustes({ esMovil }) {
     
     const [isOpen, setIsOpen] = useState(false); 
     const [modalPosition, setModalPosition] = useState({ top: 0, left: 0 });
@@ -16,7 +17,7 @@ function BotonAjustes() {
         // Para hacer que el menú se muestre debajo del botón
         setModalPosition({
             top: buttonRect.bottom + window.scrollY, // cara inferior del botón + offset de scroll
-            left: buttonRect.left -160 + window.scrollX,  // cara izquierda del boton + offset de scroll
+            left: buttonRect.left - (esMovil ? 390 : 160) + window.scrollX,  // cara izquierda del boton + offset de scroll
         });
 
         setIsOpen(true);
@@ -28,7 +29,14 @@ function BotonAjustes() {
     
     return(
         <>
-            <button className='boton-ajustes' ref={buttonRef} onClick={abrirMenu}> AJUSTES <div className="chevron"/> </button>
+            {!esMovil ? (
+                <button className='boton-ajustes' ref={buttonRef} onClick={abrirMenu}> AJUSTES <div className="chevron"/> </button>
+            ) 
+            : (
+                <button className='boton-ajustes-movil' ref={buttonRef} onClick={abrirMenu}> <SettingsIcon/> </button>
+            )
+            }
+            
 
             {isOpen && (
                 <div className="modal-overlay" onClick={cerrarMenu}>

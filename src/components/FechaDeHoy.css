@@ -5,3 +5,10 @@
     font-weight: normal;
     color: #747474;
 }
+
+@media (max-width: 1359px) {
+    .fecha-de-hoy{
+        font-size: 24px;
+    }
+    
+}

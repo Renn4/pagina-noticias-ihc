@@ -1,15 +1,19 @@
 import React from "react";
 import './PieDePagina.css'
-function PieDePagina() {
+function PieDePagina({ esMovil }) {
     return(
         <div className="pie-de-pagina">
-            <div className="contenedor-links">
-                <span className="link-pie">Preguntas frecuentes</span>
-                <span className="link-pie">Sobre nosotros</span>
-                <span className="link-pie">Ayuda al cliente</span>
-                <span className="link-pie">Contáctanos</span>
-                <span className="link-pie">Negocios</span>
-            </div>
+            
+                <div className="contenedor-links">
+                    <span className="link-pie">Preguntas frecuentes</span>
+                    <span className="link-pie">Sobre nosotros</span>
+                    <span className="link-pie">Ayuda al cliente</span>
+                    <span className="link-pie">Contáctanos</span>
+                    <span className="link-pie">Negocios</span>
+                </div>
+            
+
+            
             <div className="divisor-pie"/>
             <div className="info-pie">  
                 <span>

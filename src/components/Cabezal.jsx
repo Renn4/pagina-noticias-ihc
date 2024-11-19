@@ -2,7 +2,7 @@ import React from 'react';
 import FechaDeHoy from './FechaDeHoy';
 import './Cabezal.css'
 import BotonAjustes from './BotonAjustes'
-function Cabezal() {
+function Cabezal({ esMovil }) {
   return(
   <>
     
@@ -11,9 +11,10 @@ function Cabezal() {
       <div id='titulo-pagina'>
         DIARIO
       </div>
-      <BotonAjustes/>
+      <BotonAjustes esMovil={esMovil}/>
     </div>
     
+    {!esMovil &&
     <div className='barra-navegacion nav-1'>
       <button className='boton-navegacion btn-grande'> INICIO </button>
       <button className='boton-navegacion'> POLÍTICA </button>
@@ -21,15 +22,25 @@ function Cabezal() {
       <button className='boton-navegacion'> DEPORTES </button>
       <button className='boton-navegacion'> MUNDO </button>
       <button className='boton-navegacion'> ENTRETENIMIENTO </button>
-    </div>
-
+    </div>}
+ 
+    {!esMovil &&
     <div className='barra-navegacion nav-2'>
       <button className='boton-navegacion btn-gris'> TODO</button>
       <button className='boton-navegacion btn-gris'> ARTÍCULOS </button>
       <button className='boton-navegacion btn-gris'> REPORTAJES </button>
       <button className='boton-navegacion btn-gris'> VIDEOS </button>
       <button className='boton-navegacion btn-gris'> PODCASTS </button>
-    </div>    
+    </div>  
+    }  
+
+    {esMovil &&
+    <div className='botones-dropdown-navegacion'>
+      <button className='boton-dropdown-1'> CATEGORÍAS </button>
+      <button className='boton-dropdown-2'> TIPO DE CONTENIDO</button>
+    </div>
+    }
+
   </>
   )
 

@@ -1,0 +1,118 @@
+.contenedor-articulo{
+    margin: 0px 12px;
+    margin-bottom: 12px;
+    width: calc(100% - 70px);
+    background-color: white;
+    height: min-content;
+    border: 3px dotted #c2c2c2;
+    padding: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
+
+.titulo-noticia-articulo{
+    padding: 12px;
+    font-size: 35px;
+    width: calc(100% - 40px);
+}
+
+.articulo-contenedor-cabezal{
+    height: min-content;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.articulo-contenedor-introduccion{
+    padding: 20px;
+    height: min-content;
+    width: 40%;
+    font-size: 25px;
+    line-height: 1.5;
+    margin-right: 12px;
+}
+
+.articulo-contenedor-imagen{
+    padding: 20px;
+    width: 60%;
+    height: 400px;
+}
+
+.articulo-imagen{
+    width: 100%;
+    height: 90%;
+    background-color: #c2c2c2;
+}
+
+.descripcion-imagen{
+    display: flex;
+    height: 10%;
+    color: grey;
+    font-size: 20px;
+    align-items: center;
+}
+
+.articulo-divisor{
+    margin: 0;
+    border: none;
+    border-top: 3px dotted #c2c2c2;
+    margin-bottom: 12px;
+}
+
+
+.contenedor-cuerpo-articulo{
+    padding: 20px;
+    font-size: 25px;
+    line-height: 1.5;
+}
+
+.contenedor-cuerpo-articulo p{
+    margin: 0;
+    white-space: pre-line;
+}
+
+.footer-articulo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: grey;
+    font-size: 18px;
+}
+
+.fecha-articulo{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+@media (max-width: 1359px) {
+
+    .contenedor-articulo{
+        padding: 0px;
+        width: calc(100% - 24px);
+    }
+    .articulo-contenedor-cabezal{
+        flex-direction: column-reverse;
+    }
+    
+    .articulo-contenedor-introduccion{
+        width: calc(100% - 40px);
+        margin-right: 0;
+    }
+
+    .articulo-contenedor-imagen{
+        width: calc(100% - 40px);
+        height: 300px;
+    }
+
+    .articulo-divisor{
+        margin: 0px 12px;
+    }
+
+    .articulo-contenedor-introduccion{
+        padding-top: 0;
+    }
+
+    .footer-articulo{
+        padding: 20px;
+    }
+    
+}

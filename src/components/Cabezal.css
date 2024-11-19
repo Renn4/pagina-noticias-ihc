@@ -1,3 +1,4 @@
+
 .cabezal{ 
     display: flex;
     justify-content: space-between;
@@ -19,7 +20,6 @@
     font-weight: bold;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
 
 
 .barra-navegacion{
@@ -49,4 +49,33 @@
 
 .btn-gris{
     color: gray;
+}
+
+@media (max-width: 1359px) {
+    .cabezal{
+        padding: 0px 30px;
+        min-height: 100px;
+    }
+
+    #titulo-pagina{
+        font-size: 50px;
+    }
+    
+    .botones-dropdown-navegacion{
+        height: 50px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .boton-dropdown-1, .boton-dropdown-2{
+        font-family: Georgia, serif;
+        width: 100%;
+        font-size: 20px;
+        border: none;
+        border-bottom: 3px dotted #b8b8b8;
+        background-color: white;
+    }
+    .boton-dropdown-1{
+        border-right: 3px dotted #b8b8b8;
+    }
 }

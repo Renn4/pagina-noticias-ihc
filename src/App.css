@@ -32,7 +32,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
+    width: 100%;
+    text-align: center;
     font-size: 35px;
     color: #BD5050;
     font-weight: bold;
@@ -60,4 +61,15 @@
 }
 
 
+@media (max-width: 1359px) {
 
+    .cabezal-seccion{
+        min-height: 60px;
+        margin-bottom: 0px;
+    }
+    #titulo-seccion{
+        font-size: 30px;
+       
+    }
+
+}
