@@ -3,8 +3,9 @@ import './CartaNoticiaGrande.css'
 
 function CartaNoticiaGrande({tamañoTexto, confContraste}) {
     return(
-        <div className={`carta-noticia-grande ${confContraste ? 'carta-noticia-borde-contraste' : ''}`} style={{ '--font-size-multiplier': tamañoTexto }}>
-            <div className="info-noticia-grande">
+        <div className={`carta-noticia-grande ${confContraste ? 'carta-noticia-borde-contraste' : ''} ${(tamañoTexto === '1.4') ? 'carta-grande-vertical' : ''}`} 
+             style={{ '--font-size-multiplier': tamañoTexto }}>
+            <div className={`info-noticia-grande ${(tamañoTexto === '1.4') ? 'info-noticia-grande-vertical' : ''}`}>
 
                 <div className='titulo-noticia-grande'>
                     Título de la Noticia
@@ -36,7 +37,7 @@ function CartaNoticiaGrande({tamañoTexto, confContraste}) {
 
             </div>
 
-            <div className="imagen-noticia-grande">
+            <div className={`imagen-noticia-grande ${(tamañoTexto === '1.4') ? 'imagen-noticia-grande-vertical' : ''}`}>
 
             </div>
         </div>

@@ -17,6 +17,23 @@
 .carta-noticia-grande:hover{
     border: 3px solid #b8b8b8;
 }
+
+.carta-grande-vertical{
+    flex-direction: column-reverse !important;
+}
+
+.info-noticia-grande-vertical{
+    height: 40% !important;
+    width: 100% !important;
+}
+
+.imagen-noticia-grande-vertical{
+    width: 100% !important;
+    height: 300px !important;
+    margin: 0 !important;
+    margin-bottom: 10px !important;
+}
+
 .info-noticia-grande{
     height: 100%;
     position: relative;
