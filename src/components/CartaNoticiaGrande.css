@@ -1,14 +1,18 @@
-.carta-noticia-grande{
-    width: 48.8%;
+.carta-noticia-grande {
     border: 3px dotted #c2c2c2;
     height: min-content;
+    width: 100%;
     box-sizing: border-box;
-    padding: .8%;
+    padding: 10px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    cursor: pointer;
+    background-color: white;
+    grid-column: span 2;  /* Ocupa dos columnas en lugar de una */
+    position: relative;
     display: flex;
     flex-direction: row;
-    cursor: pointer;
-}
+    box-sizing: border-box;
+  }
 
 .carta-noticia-grande:hover{
     border: 3px solid #b8b8b8;

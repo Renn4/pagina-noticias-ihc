@@ -46,10 +46,14 @@
 }
 
 
-.contenedor-grid-noticias{
-    width: 100%;
-    height: min-content;
-    padding-bottom: .8%;
+.contenedor-grid-noticias {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* Crear una cuadrícula de 4 columnas */
+    gap: 10px;  /* Espacio entre las cartas */
+    width: calc(100% - 20px);
+    height: auto;
+    margin: 10px;
+    box-sizing: border-box;
 }
 
 .fila-noticias{

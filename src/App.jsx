@@ -47,31 +47,35 @@ function App() {
           <div id='titulo-seccion'>ÚLTIMO MOMENTO</div>
         </div>
 
-        <Articulo tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+        {/* <Articulo tamañoTexto={tamañoTexto} confContraste={confContraste}/> */}
 
 
-        {/* {!esMovil &&
+        {/* {!esMovil && */}
         <div className='contenedor-grid-noticias'>
-          <div className='fila-noticias'>
-            <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
-            <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
-            <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
-            <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
-          </div>
-          <div className='fila-noticias'>
-            <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
-            <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
-            <CartaNoticiaGrande tamañoTexto={tamañoTexto} confContraste={confContraste}/>
-          </div>
-          <div className='fila-noticias'>
-            <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
-            <CartaNoticiaGrande tamañoTexto={tamañoTexto} confContraste={confContraste}/>
-            <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
-          </div>
+          <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+          <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+          <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+          <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+          <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+          <CartaNoticiaGrande tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+          <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+          <CartaNoticiaGrande tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+          <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+          <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+          <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+          <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+          <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+          <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+          <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+          <CartaNoticiaGrande tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+          <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+          <CartaNoticiaGrande tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+          <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+          <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
         </div>
-        }
+        {/* } */}
 
-        {esMovil && 
+        {/* {esMovil && 
           <div style={{ display: 'flex', alignItems: 'center',  flexDirection: 'column' }}>
             <CartaNoticiaMobile tamañoTexto={tamañoTexto} confContraste={confContraste}/>
             <CartaNoticiaMobile tamañoTexto={tamañoTexto} confContraste={confContraste}/>

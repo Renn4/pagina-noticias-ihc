@@ -1,14 +1,15 @@
-.carta-noticia{
-    position: relative;
-    width: 24%;
+.carta-noticia {
     border: 3px dotted #c2c2c2;
     min-height: min-content;
     box-sizing: border-box;
-    padding: .8%;
+    padding: 10px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     cursor: pointer;
     background-color: white;
-}
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+  }
 
 .carta-noticia:hover{
     border: 3px solid #b8b8b8;
