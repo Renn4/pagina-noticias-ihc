@@ -1,9 +1,9 @@
 import React from 'react';
 import './CartaNoticia.css'
 
-function CartaNoticia({tamañoTexto}) {
+function CartaNoticia({tamañoTexto, confContraste}) {
     return(
-        <div className='carta-noticia' style={{ '--font-size-multiplier': tamañoTexto }}> 
+        <div className={`carta-noticia ${confContraste ? 'carta-noticia-borde-contraste' : ''}`} style={{ '--font-size-multiplier': tamañoTexto }}> 
 
             <div className='imagen-noticia'></div>
 
@@ -19,7 +19,7 @@ function CartaNoticia({tamañoTexto}) {
 
             <div className='padding-footer-noticia'></div>
             <div className='footer-noticia'>
-                <div className='tema-noticia'>
+                <div className={`tema-noticia ${confContraste ? 'contraste-aumentado-rojo' : ''}`}>
                     economía
                 </div>
                 <div className='tipo-contenido-noticia'>

@@ -1,12 +1,12 @@
 import React from "react";
 import './Articulo.css'
 
-function Articulo( {tamañoTexto}){
+function Articulo( {tamañoTexto, confContraste}){
     return(
 
-        <div className="contenedor-articulo" style={{ '--font-size-multiplier': tamañoTexto }}>
+        <div className={`contenedor-articulo ${confContraste ? 'border-contraste' : ''}`} style={{ '--font-size-multiplier': tamañoTexto }}>
             <div className="titulo-noticia-articulo"> Título de la noticia que particularmente es un artículo informativo sí sí </div>
-            <hr className="articulo-divisor"/>
+            <hr className={`articulo-divisor ${confContraste ? 'border-top-contraste' : ''}`}/>
             <div className="articulo-contenedor-cabezal">
                 <div className="articulo-contenedor-introduccion">
                     blablablablablabla. bla bla bla. blablablab bla bla blab. blablalbl  balblab l bal blabalblbalb lalalba la blablablbl 
@@ -16,10 +16,10 @@ function Articulo( {tamañoTexto}){
                 </div>
                 <div className="articulo-contenedor-imagen">
                     <div className="articulo-imagen"></div>
-                    <div className="descripcion-imagen"> Breve descripción de la imagen.</div>
+                    <div className={`descripcion-imagen ${confContraste ? 'contraste-aumentado' : ''}`}> Breve descripción de la imagen.</div>
                 </div>
             </div>
-            <hr className="articulo-divisor"/>
+            <hr className={`articulo-divisor ${confContraste ? 'border-top-contraste' : ''}`}/>
             <div className="contenedor-cuerpo-articulo">
                 <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia nulla sit amet nisi aliquet, ac fermentum nulla efficitur. Curabitur tempor, metus a feugiat interdum, leo ligula dictum nulla, in luctus tortor risus ac leo. Aliquam erat volutpat. Nullam fermentum mollis risus, sed consequat justo. Integer varius est nec erat vulputate, at pretium ante tristique. Quisque viverra, velit ac ultricies laoreet, sapien lorem sollicitudin eros, at auctor velit odio eget elit.
@@ -33,12 +33,12 @@ function Articulo( {tamañoTexto}){
                 Donec lobortis vestibulum est. Ut malesuada dui vitae purus tincidunt, at ullamcorper odio malesuada. In venenatis.            
             </p>
             </div>
-            <hr className="articulo-divisor"/>
+            <hr className={`articulo-divisor ${confContraste ? 'border-top-contraste' : ''}`}/>
             <div className="footer-articulo">
-                <div className="autor-articulo">
+                <div className={`autor-articulo ${confContraste ? 'contraste-aumentado' : ''}`}>
                     ESCRITO POR: <span> AUTOR DEL ARTÍCULO </span> 
                 </div>
-                <div className="fecha-articulo">12/12/2024</div>
+                <div className={`fecha-articulo ${confContraste ? 'contraste-aumentado' : ''}`}>12/12/2024</div>
             </div>
         </div>
     )

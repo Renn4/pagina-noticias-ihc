@@ -1,6 +1,6 @@
 import React from 'react';
 import './FechaDeHoy.css'
-function FechaDeHoy() {
+function FechaDeHoy({confContraste}) {
 
     const currentDate = new Date();
 
@@ -11,7 +11,7 @@ function FechaDeHoy() {
     });
 
     return (
-        <div className='fecha-de-hoy'>
+        <div className={`fecha-de-hoy ${confContraste ? 'contraste-aumentado' : ''}`} >
             {formattedDate} {/* Muestra la fecha en el formato DD-MM-YYYY */}
         </div>
     );

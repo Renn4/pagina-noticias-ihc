@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRef } from "react";
 import SettingsIcon from '@mui/icons-material/Settings';
 
-function BotonAjustes({ esMovil, tamañoTexto,  setTamañoTexto }) {
+function BotonAjustes({ esMovil, tamañoTexto,  setTamañoTexto, confContraste, setConfContraste}) {
     
     const [isOpen, setIsOpen] = useState(false); 
     const [modalPosition, setModalPosition] = useState({ top: 0, left: 0 });
@@ -12,6 +12,10 @@ function BotonAjustes({ esMovil, tamañoTexto,  setTamañoTexto }) {
 
     const handleSizeChange = (event) => {
         setTamañoTexto(event.target.value);  // Update the parent's state
+    };
+
+    const handleContrasteChange = (event) => {
+        setConfContraste(event.target.value);
     };
 
     const abrirMenu = () => {
@@ -46,8 +50,7 @@ function BotonAjustes({ esMovil, tamañoTexto,  setTamañoTexto }) {
                 <div className="modal-overlay" onClick={cerrarMenu}>
                     <div className="modal-content" 
                         onClick={(e) => e.stopPropagation()}
-                        style={{ top: `${modalPosition.top}px`, left: `${modalPosition.left}px` }}>
-                        
+                        style={{ top: `${modalPosition.top}px`, left: `${modalPosition.left}px`, '--font-size-multiplier': tamañoTexto }}>
                         <button className="btn-cerrar-modal" onClick={cerrarMenu}>&times;</button>
 
                         <span className="nombre-configuracion"> Contraste de texto</span>
@@ -57,6 +60,9 @@ function BotonAjustes({ esMovil, tamañoTexto,  setTamañoTexto }) {
                                 type="radio" 
                                 name="contraste" 
                                 id="contraste-regular" 
+                                value="false"
+                                checked={confContraste === false}
+                                onChange={() => setConfContraste(false)}
                                 />
                                 <label htmlFor="contraste-regular"> Regular </label>
                             </li>
@@ -65,6 +71,9 @@ function BotonAjustes({ esMovil, tamañoTexto,  setTamañoTexto }) {
                                 type="radio" 
                                 name="contraste" 
                                 id="contraste-elevado" 
+                                value="true"
+                                checked={confContraste === true}
+                                onChange={() => setConfContraste(true)}
                                 />
                                 <label htmlFor="contraste-elevado"> Elevado </label>
                             </li>

@@ -73,3 +73,36 @@
     }
 
 }
+
+/* Estilos de contraste aumentado */
+
+.contraste-aumentado{
+    color: black !important;
+}
+
+.contraste-aumentado-rojo{
+    color: #BD5050;
+}
+
+.carta-noticia-borde-contraste{
+    border: 3px solid #b8b8b8 !important;
+}
+
+.carta-noticia-borde-contraste:hover{
+    border: 3px solid #BD5050 !important;
+}
+
+.border-contraste{
+    border: 3px solid #b8b8b8 !important;
+}
+.border-bottom-contraste{
+    border-bottom: 3px solid #b8b8b8 !important;
+}
+
+.border-top-contraste{
+    border-top: 3px solid #b8b8b8 !important;
+}
+
+.border-right-contraste{
+    border-right: 3px solid #b8b8b8 !important;
+}

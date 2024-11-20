@@ -1,9 +1,9 @@
 import React from 'react';
 import './CartaNoticiaMobile.css'
 
-function CartaNoticiaMobile( {tamañoTexto}) {
+function CartaNoticiaMobile( {tamañoTexto, confContraste}) {
     return(
-        <div className='carta-noticia-mobile' style={{ '--font-size-multiplier': tamañoTexto }}> 
+        <div className={`carta-noticia-mobile ${confContraste ? 'carta-noticia-borde-contraste' : ''}`} style={{ '--font-size-multiplier': tamañoTexto }}> 
 
             <div className='imagen-noticia-mobile'></div>
 
@@ -19,7 +19,7 @@ function CartaNoticiaMobile( {tamañoTexto}) {
 
             <div className='padding-footer-noticia-mobile'></div>
             <div className='footer-noticia-mobile'>
-                <div className='tema-noticia-mobile'>
+                <div className={`tema-noticia-mobile ${confContraste ? 'contraste-aumentado-rojo' : ''}`}>
                     economía
                 </div>
                 <div className='tipo-contenido-noticia-mobile'>

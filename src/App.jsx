@@ -12,6 +12,7 @@ function App() {
 
   const [esMovil, setEsMovil] = useState(window.innerWidth < 1440);
   const [tamañoTexto, setTamañoTexto] = useState(1);
+  const [confContraste, setConfContraste] = useState(false);
 
   useEffect(() => {
     // Function to handle window resize event
@@ -34,45 +35,52 @@ function App() {
     <div className="App">
       <div className='contenedor-principal'>
         
-        <Cabezal esMovil={esMovil}  tamañoTexto={tamañoTexto} setTamañoTexto={setTamañoTexto}/> 
+        <Cabezal 
+        esMovil={esMovil}  
+        tamañoTexto={tamañoTexto} 
+        setTamañoTexto={setTamañoTexto} 
+        confContraste={confContraste}
+        setConfContraste={setConfContraste}
+        /> 
 
         <div className='cabezal-seccion' style={{ '--font-size-multiplier': tamañoTexto }}>
           <div id='titulo-seccion'>ÚLTIMO MOMENTO</div>
         </div>
 
-        {/* <Articulo tamañoTexto={tamañoTexto}/> */}
+        <Articulo tamañoTexto={tamañoTexto} confContraste={confContraste}/>
 
-        {!esMovil &&
+
+        {/* {!esMovil &&
         <div className='contenedor-grid-noticias'>
           <div className='fila-noticias'>
-            <CartaNoticia tamañoTexto={tamañoTexto}/>
-            <CartaNoticia tamañoTexto={tamañoTexto}/>
-            <CartaNoticia tamañoTexto={tamañoTexto}/>
-            <CartaNoticia tamañoTexto={tamañoTexto}/>
+            <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+            <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+            <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+            <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
           </div>
           <div className='fila-noticias'>
-            <CartaNoticia tamañoTexto={tamañoTexto}/>
-            <CartaNoticia tamañoTexto={tamañoTexto}/>
-            <CartaNoticiaGrande tamañoTexto={tamañoTexto}/>
+            <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+            <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+            <CartaNoticiaGrande tamañoTexto={tamañoTexto} confContraste={confContraste}/>
           </div>
           <div className='fila-noticias'>
-            <CartaNoticia tamañoTexto={tamañoTexto}/>
-            <CartaNoticiaGrande tamañoTexto={tamañoTexto}/>
-            <CartaNoticia tamañoTexto={tamañoTexto}/>
+            <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+            <CartaNoticiaGrande tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+            <CartaNoticia tamañoTexto={tamañoTexto} confContraste={confContraste}/>
           </div>
         </div>
         }
 
         {esMovil && 
           <div style={{ display: 'flex', alignItems: 'center',  flexDirection: 'column' }}>
-            <CartaNoticiaMobile tamañoTexto={tamañoTexto}/>
-            <CartaNoticiaMobile tamañoTexto={tamañoTexto}/>
-            <CartaNoticiaMobile tamañoTexto={tamañoTexto}/>
-            <CartaNoticiaMobile tamañoTexto={tamañoTexto}/>
+            <CartaNoticiaMobile tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+            <CartaNoticiaMobile tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+            <CartaNoticiaMobile tamañoTexto={tamañoTexto} confContraste={confContraste}/>
+            <CartaNoticiaMobile tamañoTexto={tamañoTexto} confContraste={confContraste}/>
           </div>
-        }
+        } */}
 
-        <PieDePagina esMovil= { esMovil } tamañoTexto={tamañoTexto}/>
+        <PieDePagina esMovil= { esMovil } tamañoTexto={tamañoTexto} confContraste={confContraste}/>
 
       </div>
     </div>
