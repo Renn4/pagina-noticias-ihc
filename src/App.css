@@ -34,7 +34,7 @@
     transform: translate(-50%, -50%);
     width: 100%;
     text-align: center;
-    font-size: 35px;
+    font-size: calc(35px * var(--font-size-multiplier, 1));
     color: #BD5050;
     font-weight: bold;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -65,11 +65,11 @@
 
     .cabezal-seccion{
         min-height: 60px;
+        height: calc(60px * var(--font-size-multiplier, 1));;
         margin-bottom: 0px;
     }
     #titulo-seccion{
-        font-size: 30px;
-       
+        font-size: calc(30px * var(--font-size-multiplier, 1));
     }
 
 }

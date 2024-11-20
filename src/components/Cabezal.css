@@ -15,7 +15,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     
-    font-size: 70px;
+    font-size: calc(70px * var(--font-size-multiplier, 1));
     color: #BD5050;
     font-weight: bold;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -30,7 +30,7 @@
 .barra-navegacion .boton-navegacion{
     flex-grow: 1;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 20px;
+    font-size: calc(20px * var(--font-size-multiplier, 1));
     border: none;
     background-color: white;
 }
@@ -40,11 +40,11 @@
 }
 
 .nav-1{
-    height: 60px;
+    height: calc(60px * var(--font-size-multiplier, 1));
 }
 
 .nav-2{
-    height: 50px;
+    height: calc(50px * var(--font-size-multiplier, 1));
 }
 
 .btn-gris{
@@ -58,11 +58,12 @@
     }
 
     #titulo-pagina{
-        font-size: 50px;
+        font-size: 50px
     }
     
     .botones-dropdown-navegacion{
-        height: 50px;
+        min-height: calc(50px * var(--font-size-multiplier, 1));
+        height: min-content;
         display: flex;
         justify-content: space-evenly;
     }
@@ -70,7 +71,7 @@
     .boton-dropdown-1, .boton-dropdown-2{
         font-family: Georgia, serif;
         width: 100%;
-        font-size: 20px;
+        font-size: calc(20px * var(--font-size-multiplier, 1));
         border: none;
         border-bottom: 3px dotted #b8b8b8;
         background-color: white;

@@ -1,13 +1,13 @@
 import React from 'react';
 import './CartaNoticia.css'
 
-function CartaNoticia() {
+function CartaNoticia({tamañoTexto}) {
     return(
-        <div className='carta-noticia'> 
+        <div className='carta-noticia' style={{ '--font-size-multiplier': tamañoTexto }}> 
 
             <div className='imagen-noticia'></div>
 
-            <div className='titulo-noticia'>
+            <div className='titulo-noticia' >
                 Título de la Noticia
             </div>
             
@@ -17,6 +17,7 @@ function CartaNoticia() {
                 Párrafo corto añadiendo contexto al título de la noticia. asdasd asdasd asdaasd
             </div>
 
+            <div className='padding-footer-noticia'></div>
             <div className='footer-noticia'>
                 <div className='tema-noticia'>
                     economía

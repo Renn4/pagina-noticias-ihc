@@ -11,6 +11,7 @@ import Articulo from './components/Articulo.jsx';
 function App() {
 
   const [esMovil, setEsMovil] = useState(window.innerWidth < 1440);
+  const [tamañoTexto, setTamañoTexto] = useState(1);
 
   useEffect(() => {
     // Function to handle window resize event
@@ -33,44 +34,45 @@ function App() {
     <div className="App">
       <div className='contenedor-principal'>
         
-        <Cabezal esMovil={esMovil}/> 
+        <Cabezal esMovil={esMovil}  tamañoTexto={tamañoTexto} setTamañoTexto={setTamañoTexto}/> 
 
-        <div className='cabezal-seccion'>
+        <div className='cabezal-seccion' style={{ '--font-size-multiplier': tamañoTexto }}>
           <div id='titulo-seccion'>ÚLTIMO MOMENTO</div>
         </div>
 
-        <Articulo/>
+        {/* <Articulo tamañoTexto={tamañoTexto}/> */}
 
-        {/* {!esMovil &&
+        {!esMovil &&
         <div className='contenedor-grid-noticias'>
           <div className='fila-noticias'>
-            <CartaNoticia/>
-            <CartaNoticia/>
-            <CartaNoticia/>
-            <CartaNoticia/>
+            <CartaNoticia tamañoTexto={tamañoTexto}/>
+            <CartaNoticia tamañoTexto={tamañoTexto}/>
+            <CartaNoticia tamañoTexto={tamañoTexto}/>
+            <CartaNoticia tamañoTexto={tamañoTexto}/>
           </div>
           <div className='fila-noticias'>
-            <CartaNoticia/>
-            <CartaNoticia/>
-            <CartaNoticiaGrande/>
+            <CartaNoticia tamañoTexto={tamañoTexto}/>
+            <CartaNoticia tamañoTexto={tamañoTexto}/>
+            <CartaNoticiaGrande tamañoTexto={tamañoTexto}/>
           </div>
           <div className='fila-noticias'>
-            <CartaNoticia/>
-            <CartaNoticiaGrande/>
-            <CartaNoticia/>
+            <CartaNoticia tamañoTexto={tamañoTexto}/>
+            <CartaNoticiaGrande tamañoTexto={tamañoTexto}/>
+            <CartaNoticia tamañoTexto={tamañoTexto}/>
           </div>
         </div>
         }
 
         {esMovil && 
           <div style={{ display: 'flex', alignItems: 'center',  flexDirection: 'column' }}>
-            <CartaNoticiaMobile/>
-            <CartaNoticiaMobile/>
-            <CartaNoticiaMobile/>
-            <CartaNoticiaMobile/>
+            <CartaNoticiaMobile tamañoTexto={tamañoTexto}/>
+            <CartaNoticiaMobile tamañoTexto={tamañoTexto}/>
+            <CartaNoticiaMobile tamañoTexto={tamañoTexto}/>
+            <CartaNoticiaMobile tamañoTexto={tamañoTexto}/>
           </div>
-        } */}
-        <PieDePagina esMovil= { esMovil }/>
+        }
+
+        <PieDePagina esMovil= { esMovil } tamañoTexto={tamañoTexto}/>
 
       </div>
     </div>

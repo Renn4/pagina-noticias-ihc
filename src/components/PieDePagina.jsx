@@ -1,8 +1,8 @@
 import React from "react";
 import './PieDePagina.css'
-function PieDePagina({ esMovil }) {
+function PieDePagina({ esMovil, tamañoTexto}) {
     return(
-        <div className="pie-de-pagina">
+        <div className="pie-de-pagina" style={{ '--font-size-multiplier': tamañoTexto }}>
             
                 <div className="contenedor-links">
                     <span className="link-pie">Preguntas frecuentes</span>

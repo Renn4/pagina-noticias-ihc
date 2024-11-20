@@ -4,6 +4,7 @@
     border-top: 3px dotted #d7d7d7;
     padding: 60px 40px;
     color: #9b9b9b;
+    font-size: calc(18px * var(--font-size-multiplier, 1));
 }
 
 .pie-de-pagina .divisor-pie{
@@ -19,7 +20,6 @@
     width: calc(100% - 80px);
     justify-content: space-between;
     padding: 0px 40px;
-    font-size: 18px;
 }
 
 .contenedor-links .link-pie:hover{
@@ -36,7 +36,7 @@
 @media (max-width: 1359px) {
 
     .pie-de-pagina{
-        font-size: 21px;
+        font-size: calc(21px * var(--font-size-multiplier, 1));
     }
     .contenedor-links{
         width: calc(100% - 40px);
@@ -44,7 +44,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        font-size: 21px;
         gap: 10px;
     }
 

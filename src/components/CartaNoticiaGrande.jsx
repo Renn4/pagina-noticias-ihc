@@ -1,9 +1,9 @@
 import React from "react";
 import './CartaNoticiaGrande.css'
 
-function CartaNoticiaGrande() {
+function CartaNoticiaGrande({tamañoTexto}) {
     return(
-        <div className="carta-noticia-grande">
+        <div className="carta-noticia-grande" style={{ '--font-size-multiplier': tamañoTexto }}>
             <div className="info-noticia-grande">
 
                 <div className='titulo-noticia-grande'>

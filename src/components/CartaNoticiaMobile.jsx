@@ -1,9 +1,9 @@
 import React from 'react';
 import './CartaNoticiaMobile.css'
 
-function CartaNoticiaMobile() {
+function CartaNoticiaMobile( {tamañoTexto}) {
     return(
-        <div className='carta-noticia-mobile'> 
+        <div className='carta-noticia-mobile' style={{ '--font-size-multiplier': tamañoTexto }}> 
 
             <div className='imagen-noticia-mobile'></div>
 
@@ -17,6 +17,7 @@ function CartaNoticiaMobile() {
                 Párrafo corto añadiendo contexto al título de la noticia. asdasd asdasd asdaasd
             </div>
 
+            <div className='padding-footer-noticia-mobile'></div>
             <div className='footer-noticia-mobile'>
                 <div className='tema-noticia-mobile'>
                     economía

@@ -1,11 +1,11 @@
 import React from "react";
 import './Articulo.css'
 
-function Articulo(){
+function Articulo( {tamañoTexto}){
     return(
 
-        <div className="contenedor-articulo">
-            <div className="titulo-noticia-articulo"> Título de la noticia asajsjj</div>
+        <div className="contenedor-articulo" style={{ '--font-size-multiplier': tamañoTexto }}>
+            <div className="titulo-noticia-articulo"> Título de la noticia que particularmente es un artículo informativo sí sí </div>
             <hr className="articulo-divisor"/>
             <div className="articulo-contenedor-cabezal">
                 <div className="articulo-contenedor-introduccion">
