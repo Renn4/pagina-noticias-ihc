@@ -9,23 +9,27 @@ import CartaNoticiaMobile from './CartaNoticiaMobile.jsx';
 import { useMemo } from 'react';
 
 
-const HomePage = ({ tamañoTexto, confContraste, esMovil }) => {
+const HomePage = ({ tamañoTexto, confContraste, esMovil, tipoContenido }) => {
   const { categoria } = useParams();
   const [filasNoticias, setFilasNoticias] = useState([]);
-
   const categoriaSeleccionada = categoria || 'Todas';
 
+  
   // Memoriza las noticias filtradas
   const noticiasFiltradas = useMemo(() => {
-    return categoriaSeleccionada === 'Todas'
+    const noticiasPorCategoria = categoriaSeleccionada === 'Todas'
       ? noticias
       : noticias.filter(
-        (noticia) =>
-          noticia.contenido.categoria &&
-          noticia.contenido.categoria.toLowerCase() === categoriaSeleccionada.toLowerCase()
-      );
-  }, [categoriaSeleccionada]);
+          (noticia) =>
+            noticia.contenido.categoria &&
+            noticia.contenido.categoria.toLowerCase() === categoriaSeleccionada.toLowerCase()
+        );
 
+    // Ahora filtramos por tipo de contenido
+    return noticiasPorCategoria.filter((noticia) => {
+      return tipoContenido === 'TODO' || noticia.contenido.tipo.toLowerCase() === tipoContenido.toLowerCase();
+    });
+  }, [categoriaSeleccionada, tipoContenido]);
   // Memoriza las noticias pequeñas y grandes
   const noticiasPequenas = useMemo(
     () => noticiasFiltradas.filter((noticia) => noticia.tamaño === 'pequeña'),
@@ -90,10 +94,12 @@ const HomePage = ({ tamañoTexto, confContraste, esMovil }) => {
             ? 'Todas las Noticias'
             : `Noticias de ${categoriaSeleccionada}`}
         </div>
+          
       </div>
-
+           
       {!esMovil && (
         <div className="contenedor-grid-noticias">
+          
           {filasNoticias.flat().map((noticia, i) =>
             noticia.tamaño === 'grande' ? (
               <CartaNoticiaGrande
@@ -102,6 +108,7 @@ const HomePage = ({ tamañoTexto, confContraste, esMovil }) => {
                 contenido={noticia.contenido}
                 tamañoTexto={tamañoTexto}
                 confContraste={confContraste}
+                
               />
             ) : (
               <CartaNoticia

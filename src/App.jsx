@@ -1,17 +1,12 @@
 import './App.css';
 import Cabezal from './components/Cabezal.jsx';
 import HomePage from './components/HomePage.jsx';
-import CartaNoticia from './components/CartaNoticia.jsx';
-import CartaNoticiaGrande from './components/CartaNoticiaGrande.jsx';
-import CartaNoticiaMobile from './components/CartaNoticiaMobile.jsx';
 import PieDePagina from './components/PieDePagina.jsx';
 import { useState, useEffect } from 'react';
 import Articulo from './components/Articulo.jsx';
 import Reportaje from './components/Reportaje.jsx';
 import Video from './components/Video.jsx'; 
 import Podcast from './components/Podcast.jsx';
-import { useMemo } from 'react';
-import noticias from './data/noticias.js';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -19,6 +14,7 @@ function App() {
   const [esMovil, setEsMovil] = useState(window.innerWidth < 1440);
   const [tamañoTexto, setTamañoTexto] = useState(1);
   const [confContraste, setConfContraste] = useState(false);
+  const [tipoContenido, setTipoContenido] = useState("TODO");
 
   useEffect(() => {
     // Function to handle window resize event
@@ -48,6 +44,8 @@ function App() {
         setTamañoTexto={setTamañoTexto} 
         confContraste={confContraste}
         setConfContraste={setConfContraste}
+        tipoContenido={tipoContenido}
+        setTipoContenido={setTipoContenido}
         /> 
 
         {/* <Articulo tamañoTexto={tamañoTexto} confContraste={confContraste}/>
@@ -57,8 +55,8 @@ function App() {
 
           <Routes>
             {/* Página principal */}
-            <Route path="/" element={<HomePage esMovil={esMovil} tamañoTexto={tamañoTexto} confContraste={confContraste}/>} />
-            <Route path="/:categoria" element={<HomePage esMovil={esMovil} tamañoTexto={tamañoTexto} confContraste={confContraste} />} />
+            <Route path="/" element={<HomePage esMovil={esMovil} tamañoTexto={tamañoTexto} confContraste={confContraste} tipoContenido={tipoContenido} />}  />
+            <Route path="/:categoria" element={<HomePage esMovil={esMovil} tamañoTexto={tamañoTexto} confContraste={confContraste} tipoContenido={tipoContenido}/>} />
             {/* Páginas individuales */}
             <Route path="/articulo/:id" element={<Articulo esMovil={esMovil} tamañoTexto={tamañoTexto} confContraste={confContraste}/>} />
             <Route path="/reportaje/:id" element={<Reportaje esMovil={esMovil} tamañoTexto={tamañoTexto} confContraste={confContraste}/>} />

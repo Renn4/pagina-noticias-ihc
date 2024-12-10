@@ -1,5 +1,63 @@
+/*
+    Componentes básicos de una noticia:
+    - imagen
+    - titulo
+    - parrafo
+    - autor
+    - fecha
+
+    Componentes adicionales de una noticia grande:
+    -parrafoSecundario
+
+    Componentes de un artículo:
+    - introduccion
+    - cuerpo
+    - imagen (misma que la de la portada)
+    - descripcionDeImagen
+
+    Componentes de un reportaje:
+    - imagen (misma que portada)
+    - descripcionImagen1
+    - cuerpo1
+    - imagen2
+    - descripcionImagen2
+    - textoImagen2
+    - cuerpo2
+    - imagen3
+    - descripcionImagen3
+    - textoImagen3
+
+    Componentes de un video:
+    - imagen (para portada)
+    - video
+    - descripcionDeVideo
+    - cuerpo
+
+    Componentes de un podcast:
+    - 
+*/ 
+
 const noticias = [
-    { id: 1, tamaño: 'pequeña', 
+    { 
+        /* economia - articulo */
+        id: 1, tamaño: 'grande', 
+        contenido: {
+            tipo: 'articulo', 
+            categoria: 'economía', 
+            titulo: 'Cómo la Inflación Impacta en el Poder Adquisitivo de las Familias',
+            parrafo: 'Parrafo corto añadiendo contexto al título de la noticia. Palabras para rellenar.',
+            parrafoSecundario: 'Párrafo corto desarrollando un poco más en la noticia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+            autor: 'Geronimo Manzini',
+            introduccion: 'El panorama económico actual está marcado por cambios profundos. Desde la innovación tecnológica hasta la transición hacia energías renovables, los sectores productivos enfrentan nuevos desafíos y oportunidades. Mientras tanto, las tasas de inflación y las políticas monetarias siguen influyendo en las decisiones de consumidores y empresas. En este contexto, analizar las dinámicas económicas globales resulta crucial para comprender las tendencias que definirán el futuro. Por ello, este artículo explora cómo diferentes factores, como el comercio internacional, el mercado laboral y la inversión en tecnología, están configurando una nueva era económica.',
+            cuerpo: 'La economía global está atravesando un período de transformaciones significativas impulsadas por diversos factores, desde avances tecnológicos hasta transiciones en los modelos energéticos. La adopción de tecnologías disruptivas, como la inteligencia artificial y el blockchain, no solo está modificando la forma en que operan las empresas, sino también influyendo en la estructura de los mercados laborales. Al mismo tiempo, la presión para adoptar prácticas sostenibles está llevando a un rediseño en sectores clave como la energía y la manufactura, lo que abre nuevas oportunidades de inversión pero también plantea retos regulatorios. Por otro lado, las políticas monetarias implementadas para controlar la inflación están teniendo efectos mixtos en diferentes regiones. Mientras que algunos países logran estabilizar sus economías, otros enfrentan desaceleraciones y mayores niveles de desigualdad. El comercio internacional, tradicionalmente un motor de crecimiento, también muestra signos de tensión debido a conflictos geopolíticos y a la creciente tendencia hacia la regionalización. Estas dinámicas ponen de manifiesto la necesidad de estrategias más colaborativas y flexibles para gestionar las incertidumbres económicas. En este contexto, las empresas y los gobiernos deben adaptarse rápidamente para mantenerse competitivos. La inversión en innovación, la diversificación de mercados y el fortalecimiento de políticas sociales son herramientas clave para garantizar un crecimiento sostenible. Este análisis busca explorar cómo estas tendencias están configurando una economía más compleja y dinámica, donde los actores deben estar preparados para aprovechar las oportunidades sin perder de vista los riesgos inherentes a este nuevo escenario.',
+            imagen: 'https://media.istockphoto.com/id/1399575283/photo/money-makes-the-world-go-round.jpg?s=612x612&w=0&k=20&c=RkaZ8Vb_7zN7AvlaBSJ3rj-3YxdQFHODQ5F25xlZ1tM=',
+            descripcionDeImagen: 'Ilustración de un globo terráqueo rodeado de monedas.',
+            fecha: '10/10/14',
+        }
+    },
+    { 
+        /* economia - reportaje */
+        id: 2, tamaño: 'pequeña', 
         contenido: {
             tipo: 'reportaje', 
             categoria: 'economía',
@@ -18,8 +76,38 @@ const noticias = [
             descripcionImagen3: 'El uso de las tecnologías Fintech es improtante en el portafolio de cualquier financiera.',
             textoImagen3: 'Aunque el sector fintech está lleno de promesas, también enfrenta desafíos significativos, como la regulación y la ciberseguridad. La necesidad de adaptarse a marcos regulatorios en constante evolución y garantizar la protección de datos personales son prioridades críticas para estas empresas. A medida que el sector madura, se espera que las fintech se conviertan en un pilar esencial de la economía, integrándose con las instituciones financieras tradicionales para ofrecer soluciones híbridas que beneficien a todos los sectores de la sociedad.',
         }
+    }, 
+    { 
+        /* economia - video */
+        id: 3, tamaño: 'grande', 
+        contenido: {
+            tipo: 'video', 
+            categoria: 'economía', 
+            titulo: '¿Puede la economía argentina crecer al 8,5%?',
+            imagen: 'https://img.youtube.com/vi/SbR632MRVEs/hqdefault.jpg',
+            parrafo: 'Según JP Morgan, el PIB argumento crecerá a una tasa anualizada del 8,5% en el tercer trimestre de este año. ¿Es una estimación realista?',
+            parrafoSecundario: 'Este pronóstico se basa en una combinación de factores, como un incremento en la actividad agrícola tras una temporada de sequías, una recuperación en el consumo interno impulsada por medidas económicas recientes y un repunte en las exportaciones.',
+            video: 'https://www.youtube.com/embed/SbR632MRVEs?si=hr7Ibq46LpmcnfNz',
+            descripcionDeVideo: 'Análisis de los dichos de JP Morgan sobre la situación económica de Argentina. ',
+            cuerpo:'Según JP Morgan, el Producto Interno Bruto (PIB) de Argentina crecerá a una tasa anualizada del 8,5% en el tercer trimestre de este año. Esta proyección, sorprendente para muchos, surge en un contexto económico marcado por desafíos estructurales, alta inflación y una fuerte volatilidad en los mercados internacionales. Pero, ¿qué tan realista es esta estimación y qué factores la respaldan? Por un lado, el informe destaca un aumento significativo en la actividad agrícola, especialmente en la producción de soja y maíz, tras las lluvias que ayudaron a revertir parcialmente los efectos de una sequía prolongada. Este sector, históricamente clave para la economía argentina, ha contribuido no solo al crecimiento del PIB, sino también a una mejora en las exportaciones, generando divisas vitales para un país con restricciones cambiarias. Además, el consumo interno ha mostrado signos de recuperación. Las recientes medidas del gobierno, como bonos salariales y subsidios a sectores vulnerables, parecen haber incentivado el gasto en el corto plazo. El aumento en la actividad comercial y el turismo interno también han jugado un rol importante en dinamizar la economía. Sin embargo, el panorama no es del todo alentador. Los niveles de inflación siguen siendo alarmantemente altos, erosionando el poder adquisitivo de la población y generando incertidumbre en las inversiones a largo plazo. Por otra parte, las reservas internacionales del Banco Central siguen bajo presión, y las expectativas de devaluación generan tensiones en el mercado cambiario. Los analistas coinciden en que, si bien es posible que el PIB crezca al 8,5% en el tercer trimestre, esto podría ser un rebote puntual más que un indicador de recuperación sostenida. "El crecimiento a esta tasa es factible en un trimestre específico, pero la sostenibilidad dependerá de una combinación de políticas que aborden los problemas estructurales, como la inflación, la deuda y la falta de confianza en el mercado financiero", explicó un economista local. En definitiva, la proyección de JP Morgan invita a reflexionar sobre las potencialidades y limitaciones de la economía argentina en un año decisivo. Si bien hay señales positivas, el camino hacia una recuperación sólida y duradera sigue lleno de desafíos.',
+            autor: 'Sebastián Manzini',
+        }
     },
-    { id: 2, tamaño: 'pequeña', 
+    { 
+        /* economia - podcast */
+        id: 4, tamaño: 'pequeña', 
+        contenido: {
+            tipo: 'podcast', 
+            categoria: 'economía',  
+            titulo: '9 Esto es un placeholder de título.',
+            parrafo: 'Parrafo corto añadiendo contexto al título de la noticia. Palabras para rellenar.',
+            autor: 'Gustavo Cerati',
+        }
+    },
+    
+    {
+        /* politica - articulo */
+        id: 5, tamaño: 'pequeña', 
         contenido: {
             tipo: 'articulo', 
             categoria: 'política',
@@ -33,7 +121,70 @@ const noticias = [
             fecha: '03/04/19',
         }
     },
-    { id: 3, tamaño: 'grande', 
+    {
+        /* politica - reportaje */
+        id: 6, tamaño: 'pequeña',
+        contenido: {
+            tipo: 'reportaje', 
+            categoria: 'política', 
+            titulo: 'Esto es un placeholder de título.',
+            parrafo: 'Parrafo corto añadiendo contexto al título de la noticia. Palabras para rellenar.',
+        }
+    },
+    {
+        /* politica - video */
+        id: 7, tamaño: 'pequeña',
+        contenido: {
+            tipo: 'video', 
+            categoria: 'política', 
+            titulo: 'Esto es un placeholder de título.',
+            parrafo: 'Parrafo corto añadiendo contexto al título de la noticia. Palabras para rellenar.',
+        }
+    },
+    {
+        /* politica - podcast */
+        id: 8, tamaño: 'pequeña',
+        contenido: {
+            tipo: 'podcast', 
+            categoria: 'política', 
+            titulo: 'Esto es un placeholder de título.',
+            parrafo: 'Parrafo corto añadiendo contexto al título de la noticia. Palabras para rellenar.',
+        }
+    },
+    {
+        /* deportes - articulo */
+        id: 9, tamaño: 'pequeña',
+        contenido: {
+            tipo: 'articulo', 
+            categoria: 'deportes', 
+            titulo: 'Esto es un placeholder de título.',
+            parrafo: 'Parrafo corto añadiendo contexto al título de la noticia. Palabras para rellenar.',
+        }
+    },
+    {
+        /* deportes - reportaje */
+        id: 10, tamaño: 'pequeña',
+        contenido: {
+            tipo: 'reportaje', 
+            categoria: 'deportes', 
+            titulo: 'Esto es un placeholder de título.',
+            parrafo: 'Parrafo corto añadiendo contexto al título de la noticia. Palabras para rellenar.',
+        }
+    },
+    { 
+        /* deportes - video */
+        id: 11, tamaño: 'pequeña', 
+        contenido: {
+            tipo: 'video', 
+            categoria: 'deportes',  
+            titulo: '12 Esto es un placeholder de título.',
+            parrafo: 'Parrafo corto añadiendo contexto al título de la noticia. Palabras para rellenar.',
+            autor: 'Hughie',
+        }
+    },
+    { 
+        /* deportes - podcast */
+        id: 12, tamaño: 'grande', 
         contenido: {
             tipo: 'podcast',
             categoria: 'deportes',
@@ -46,7 +197,20 @@ const noticias = [
             autor: 'Matías Peralta Grandi',
         }
     },
-    { id: 4, tamaño: 'pequeña', 
+    { 
+        /* mundo - articulo */
+        id: 13, tamaño: 'pequeña', 
+        contenido: {
+            tipo: 'articulo', 
+            categoria: 'mundo', 
+            titulo: '10 Esto es un placeholder de título.',
+            parrafo: 'Parrafo corto añadiendo contexto al título de la noticia. Palabras para rellenar.',
+            autor: 'Serj Tankian',
+        }
+    },
+    { 
+        /* mundo - reportaje */
+        id: 14, tamaño: 'pequeña', 
         contenido: {
             tipo: 'reportaje', 
             categoria: 'mundo',
@@ -65,41 +229,19 @@ const noticias = [
             autor: 'Santiago Peralta Grandi',
         }
     },
-    { id: 5, tamaño: 'pequeña', 
+    {
+        /* mundo - video */
+        id: 15, tamaño: 'pequeña',
         contenido: {
             tipo: 'video', 
-            categoria: 'entretenimiento',
-            titulo: '5 Esto es un placeholder de título.',
+            categoria: 'mundo', 
+            titulo: 'Esto es un placeholder de título.',
             parrafo: 'Parrafo corto añadiendo contexto al título de la noticia. Palabras para rellenar.',
-            autor: 'Julia Grandi',
         }
     },
-    { id: 6, tamaño: 'grande', 
-        contenido: {
-            tipo: 'articulo', 
-            categoria: 'economía', 
-            titulo: 'Cómo la Inflación Impacta en el Poder Adquisitivo de las Familias',
-            parrafo: 'Parrafo corto añadiendo contexto al título de la noticia. Palabras para rellenar.',
-            parrafoSecundario: 'Párrafo corto desarrollando un poco más en la noticia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
-            autor: 'Geronimo Manzini',
-            introduccion: 'El panorama económico actual está marcado por cambios profundos. Desde la innovación tecnológica hasta la transición hacia energías renovables, los sectores productivos enfrentan nuevos desafíos y oportunidades. Mientras tanto, las tasas de inflación y las políticas monetarias siguen influyendo en las decisiones de consumidores y empresas. En este contexto, analizar las dinámicas económicas globales resulta crucial para comprender las tendencias que definirán el futuro. Por ello, este artículo explora cómo diferentes factores, como el comercio internacional, el mercado laboral y la inversión en tecnología, están configurando una nueva era económica.',
-            cuerpo: 'La economía global está atravesando un período de transformaciones significativas impulsadas por diversos factores, desde avances tecnológicos hasta transiciones en los modelos energéticos. La adopción de tecnologías disruptivas, como la inteligencia artificial y el blockchain, no solo está modificando la forma en que operan las empresas, sino también influyendo en la estructura de los mercados laborales. Al mismo tiempo, la presión para adoptar prácticas sostenibles está llevando a un rediseño en sectores clave como la energía y la manufactura, lo que abre nuevas oportunidades de inversión pero también plantea retos regulatorios. Por otro lado, las políticas monetarias implementadas para controlar la inflación están teniendo efectos mixtos en diferentes regiones. Mientras que algunos países logran estabilizar sus economías, otros enfrentan desaceleraciones y mayores niveles de desigualdad. El comercio internacional, tradicionalmente un motor de crecimiento, también muestra signos de tensión debido a conflictos geopolíticos y a la creciente tendencia hacia la regionalización. Estas dinámicas ponen de manifiesto la necesidad de estrategias más colaborativas y flexibles para gestionar las incertidumbres económicas. En este contexto, las empresas y los gobiernos deben adaptarse rápidamente para mantenerse competitivos. La inversión en innovación, la diversificación de mercados y el fortalecimiento de políticas sociales son herramientas clave para garantizar un crecimiento sostenible. Este análisis busca explorar cómo estas tendencias están configurando una economía más compleja y dinámica, donde los actores deben estar preparados para aprovechar las oportunidades sin perder de vista los riesgos inherentes a este nuevo escenario.',
-            imagen: 'https://media.istockphoto.com/id/1399575283/photo/money-makes-the-world-go-round.jpg?s=612x612&w=0&k=20&c=RkaZ8Vb_7zN7AvlaBSJ3rj-3YxdQFHODQ5F25xlZ1tM=',
-            descripcionDeImagen: 'Ilustración de un globo terráqueo rodeado de monedas.',
-            fecha: '10/10/14',
-        }
-    },
-    { id: 7, tamaño: 'grande', 
-        contenido: {
-            tipo: 'reportaje', 
-            categoria: 'economía', 
-            titulo: '7 Esto es un placeholder de título.',
-            parrafo: 'Parrafo corto añadiendo contexto al título de la noticia. Palabras para rellenar.',
-            parrafoSecundario: 'Párrafo corto desarrollando un poco más en la noticia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
-            autor: 'Sebastián Manzini',
-        }
-    },
-    { id: 8, tamaño: 'pequeña', 
+    { 
+        /* mundo - podcast */
+        id: 16, tamaño: 'pequeña', 
         contenido: {
             tipo: 'podcast', 
             categoria: 'mundo',  
@@ -113,27 +255,11 @@ const noticias = [
             fecha: '12/06/23',
         }
     },
-    { id: 9, tamaño: 'pequeña', 
-        contenido: {
-            tipo: 'reportaje', 
-            categoria: 'economía',  
-            titulo: '9 Esto es un placeholder de título.',
-            parrafo: 'Parrafo corto añadiendo contexto al título de la noticia. Palabras para rellenar.',
-            autor: 'Gustavo Cerati',
-        }
-    },
-    { id: 10, tamaño: 'pequeña', 
+    { 
+        /* entretenimiento - articulo */
+        id: 17, tamaño: 'grande', 
         contenido: {
             tipo: 'articulo', 
-            categoria: 'mundo', 
-            titulo: '10 Esto es un placeholder de título.',
-            parrafo: 'Parrafo corto añadiendo contexto al título de la noticia. Palabras para rellenar.',
-            autor: 'Serj Tankian',
-        }
-    },
-    { id: 11, tamaño: 'grande', 
-        contenido: {
-            tipo: 'video', 
             categoria: 'entretenimiento',  
             titulo: '11 Esto es un placeholder de título.',
             parrafo: 'Parrafo corto añadiendo contexto al título de la noticia. Palabras para rellenar.',
@@ -141,15 +267,38 @@ const noticias = [
             autor: 'Himiko Kikuchi',
         }
     },
-    { id: 12, tamaño: 'pequeña', 
+    {
+        /* entretenimiento - reportaje */
+        id: 18, tamaño: 'pequeña',
+        contenido: {
+            tipo: 'reportaje', 
+            categoria: 'entretenimiento', 
+            titulo: 'Esto es un placeholder de título.',
+            parrafo: 'Parrafo corto añadiendo contexto al título de la noticia. Palabras para rellenar.',
+        }
+    },
+    { 
+        /* entretenimiento - video */
+        id: 19, tamaño: 'pequeña', 
         contenido: {
             tipo: 'video', 
-            categoria: 'deportes',  
-            titulo: '12 Esto es un placeholder de título.',
+            categoria: 'entretenimiento',
+            titulo: '5 Esto es un placeholder de título.',
             parrafo: 'Parrafo corto añadiendo contexto al título de la noticia. Palabras para rellenar.',
-            autor: 'Hughie',
+            autor: 'Julia Grandi',
         }
-    }
+    },
+    {
+        /* entretenimiento - podcast */
+        id: 20, tamaño: 'pequeña',
+        contenido: {
+            tipo: 'podcast', 
+            categoria: 'entretenimiento', 
+            titulo: 'Esto es un placeholder de título.',
+            parrafo: 'Parrafo corto añadiendo contexto al título de la noticia. Palabras para rellenar.',
+        }
+    },
+    
 ];
 
 export default noticias;

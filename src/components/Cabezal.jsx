@@ -5,7 +5,7 @@ import BotonAjustes from './BotonAjustes'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function Cabezal({ esMovil, tamañoTexto, setTamañoTexto, confContraste, setConfContraste }) {
+function Cabezal({ esMovil, tamañoTexto, setTamañoTexto, confContraste, setConfContraste, tipoContenido, setTipoContenido}) {
   
   const [mostrarCategorias, setMostrarCategorias] = useState(false);
 
@@ -27,6 +27,10 @@ function Cabezal({ esMovil, tamañoTexto, setTamañoTexto, confContraste, setCon
     { nombre: "MUNDO", ruta: "/mundo" },
     { nombre: "ENTRETENIMIENTO", ruta: "/entretenimiento" },
   ];
+
+  const handleTipoClick = (tipo) => {
+    setTipoContenido(tipo); // Cambiar el tipo de contenido
+  };
 
   return (
     <div style={{ '--font-size-multiplier': tamañoTexto }}>
@@ -55,11 +59,11 @@ function Cabezal({ esMovil, tamañoTexto, setTamañoTexto, confContraste, setCon
 
       {!esMovil && (
         <div className={`barra-navegacion nav-2 ${confContraste ? 'contraste-aumentado border-bottom-contraste' : ''}`}>
-          <button className={`boton-navegacion ${confContraste ? 'contraste-aumentado-rojo' : 'btn-gris'}`}>TODO</button>
-          <button className={`boton-navegacion ${confContraste ? 'contraste-aumentado-rojo' : 'btn-gris'}`}>ARTÍCULOS</button>
-          <button className={`boton-navegacion ${confContraste ? 'contraste-aumentado-rojo' : 'btn-gris'}`}>REPORTAJES</button>
-          <button className={`boton-navegacion ${confContraste ? 'contraste-aumentado-rojo' : 'btn-gris'}`}>VIDEOS</button>
-          <button className={`boton-navegacion ${confContraste ? 'contraste-aumentado-rojo' : 'btn-gris'}`}>PODCASTS</button>
+          <button className={`boton-navegacion ${confContraste ? 'contraste-aumentado-rojo' : 'btn-gris'}`} onClick={() => handleTipoClick('TODO')}>TODO</button>
+          <button className={`boton-navegacion ${confContraste ? 'contraste-aumentado-rojo' : 'btn-gris'}`} onClick={() => handleTipoClick('articulo')}>ARTÍCULOS</button>
+          <button className={`boton-navegacion ${confContraste ? 'contraste-aumentado-rojo' : 'btn-gris'}`} onClick={() => handleTipoClick('reportaje')}>REPORTAJES</button>
+          <button className={`boton-navegacion ${confContraste ? 'contraste-aumentado-rojo' : 'btn-gris'}`} onClick={() => handleTipoClick('video')}>VIDEOS</button>
+          <button className={`boton-navegacion ${confContraste ? 'contraste-aumentado-rojo' : 'btn-gris'}`} onClick={() => handleTipoClick('podcast')}>PODCASTS</button>
         </div>
       )}
 
