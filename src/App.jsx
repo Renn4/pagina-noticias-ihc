@@ -58,6 +58,7 @@ function App() {
           <Routes>
             {/* Página principal */}
             <Route path="/" element={<HomePage esMovil={esMovil} tamañoTexto={tamañoTexto} confContraste={confContraste}/>} />
+            <Route path="/:categoria" element={<HomePage esMovil={esMovil} tamañoTexto={tamañoTexto} confContraste={confContraste} />} />
             {/* Páginas individuales */}
             <Route path="/articulo/:id" element={<Articulo esMovil={esMovil} tamañoTexto={tamañoTexto} confContraste={confContraste}/>} />
             <Route path="/reportaje/:id" element={<Reportaje esMovil={esMovil} tamañoTexto={tamañoTexto} confContraste={confContraste}/>} />

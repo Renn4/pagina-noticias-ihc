@@ -2,6 +2,8 @@ import React from 'react';
 import FechaDeHoy from './FechaDeHoy';
 import './Cabezal.css'
 import BotonAjustes from './BotonAjustes'
+import { Link } from 'react-router-dom';
+
 function Cabezal({ esMovil, tamañoTexto, setTamañoTexto, confContraste, setConfContraste}) {
   return(
   <div style={{ '--font-size-multiplier': tamañoTexto }}>
@@ -16,12 +18,12 @@ function Cabezal({ esMovil, tamañoTexto, setTamañoTexto, confContraste, setCon
     
     {!esMovil &&
     <div className={`barra-navegacion nav-1 ${confContraste ? 'contraste-aumentado border-bottom-contraste' : ''}`} >
-      <button className='boton-navegacion btn-grande'> INICIO </button>
-      <button className='boton-navegacion'> POLÍTICA </button>
-      <button className='boton-navegacion'> ECONOMÍA </button>
-      <button className='boton-navegacion'> DEPORTES </button>
-      <button className='boton-navegacion'> MUNDO </button>
-      <button className='boton-navegacion'> ENTRETENIMIENTO </button>
+      <Link to="/" className='boton-navegacion btn-grande'> INICIO </Link>
+      <Link to="/política" className='boton-navegacion'> POLÍTICA </Link>
+      <Link to="/economía" className='boton-navegacion'> ECONOMÍA </Link>
+      <Link to="/deportes" className='boton-navegacion'> DEPORTES </Link>
+      <Link to="/mundo" className='boton-navegacion'> MUNDO </Link>
+      <Link to="/entretenimiento" className='boton-navegacion'> ENTRETENIMIENTO </Link>
     </div>}
  
     {!esMovil &&
