@@ -33,6 +33,11 @@
     font-size: calc(20px * var(--font-size-multiplier, 1));
     border: none;
     background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
 }
 
 .barra-navegacion .boton-navegacion:hover{
@@ -48,7 +53,7 @@
 }
 
 .btn-gris{
-    color: gray;
+    color: gray !important;
 }
 
 @media (max-width: 1359px) {
