@@ -7,7 +7,7 @@
     background-attachment: fixed; /* Ensures the background stays static */
     background-position: center;
     overflow: hidden;
-
+    /* text-align: justify;      */
 }
 
 .contenedor-principal{

@@ -1,32 +1,38 @@
 import React from 'react';
 import './CartaNoticia.css'
+import { Link } from 'react-router-dom';
+import noticias from '../data/noticias';
 
-function CartaNoticia({tamañoTexto, confContraste}) {
+function CartaNoticia({tamañoTexto, confContraste, contenido, noticia}) {
     return(
+        <Link to={`/${contenido.tipo}/${noticia.id}`} className='unstyled-link'>
         <div className={`carta-noticia ${confContraste ? 'carta-noticia-borde-contraste' : ''}`} style={{ '--font-size-multiplier': tamañoTexto }}> 
 
-            <div className='imagen-noticia'></div>
-
+            <div className='imagen-noticia'>
+                <img src={contenido.imagen} alt={contenido.descripcionDeImagen} />
+            </div>
+            
             <div className='titulo-noticia' >
-                Título de la Noticia
+            {contenido.titulo}
             </div>
             
             <hr />
 
             <div className='parrafo-noticia'>
-                Párrafo corto añadiendo contexto al título de la noticia. asdasd asdasd asdaasd
+                {contenido.parrafo}
             </div>
 
             <div className='padding-footer-noticia'></div>
             <div className='footer-noticia'>
                 <div className={`tema-noticia ${confContraste ? 'contraste-aumentado-rojo' : ''}`}>
-                    economía
+                    {contenido.categoria}
                 </div>
                 <div className='tipo-contenido-noticia'>
-                    artículo
+                    {contenido.tipo}
                 </div>
             </div>
         </div>
+        </Link>
     )
 }
 
