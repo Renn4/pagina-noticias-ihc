@@ -32,6 +32,8 @@
 .titulo-noticia-mobile{
     font-size: calc(25px * var(--font-size-multiplier, 1));
     padding: 7px 0px;
+    font-weight: normal;
+    margin: 0;
 }
 
 .carta-noticia-mobile hr{
@@ -57,7 +59,7 @@
     align-items: center;
     
     font-size: calc(20px * var(--font-size-multiplier, 1));
-    color: rgb(170, 170, 170);
+    color: rgb(141, 141, 141);
 }
 
 .padding-footer-noticia-mobile{

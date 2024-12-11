@@ -69,13 +69,15 @@
 .imagen-noticia-grande{
     width: calc(60% - 12px);
     background-color: rgb(236, 236, 236);
-    margin-left: 10px;
+    margin: 0px 0px 0px 10px;
 }
 
 .titulo-noticia-grande{
     font-size: calc(25px * var(--font-size-multiplier, 1));
     padding-bottom: 7px;
     color: #BD5050;
+    font-weight: normal;
+    margin: 0;
 }
 
 .carta-noticia-grande hr{
@@ -98,7 +100,7 @@
 .autor-noticia-grande{
     margin: 10px 0px;
     font-size: calc(20px * var(--font-size-multiplier, 1));
-    color: rgb(170, 170, 170);
+    color: rgb(141, 141, 141);
 }
 
 .footer-noticia-grande{
@@ -112,7 +114,7 @@
     align-items: center;
     
     font-size: calc(20px * var(--font-size-multiplier, 1));
-    color: rgb(170, 170, 170);
+    color: rgb(141, 141, 141);
 }
 
 .tipo-contenido-noticia-grande{

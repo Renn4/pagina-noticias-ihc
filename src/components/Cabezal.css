@@ -14,7 +14,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
+    margin: 0;
     font-size: calc(70px * var(--font-size-multiplier, 1));
     color: #BD5050;
     font-weight: bold;

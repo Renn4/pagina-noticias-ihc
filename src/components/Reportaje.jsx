@@ -25,16 +25,16 @@ function Reportaje( {tamañoTexto, confContraste}){
         <div className={`contenedor-reportaje ${confContraste ? 'border-contraste' : ''}`} style={{ '--font-size-multiplier': tamañoTexto }}>
             
             {/* TITULO */}
-            <div className="titulo-noticia-reportaje"> {reportaje.contenido.titulo} </div>
+            <h2 className="titulo-noticia-reportaje"> {reportaje.contenido.titulo} </h2>
             <hr className={`reportaje-divisor ${confContraste ? 'border-top-contraste' : ''}`}/>
             
             {/* CABEZAL */}
-            <div className="reportaje-cabezal">
-                <div className="reportaje-cabezal-imagen">
-                    <img src={reportaje.contenido.imagen} alt="" />
-                </div>
+            <header className="reportaje-cabezal">
+                <figure style={{margin:'0'}} className="reportaje-cabezal-imagen">
+                    <img src={reportaje.contenido.imagen} alt={reportaje.contenido.descripcionImagen1} />
+                </figure>
                 <div className={`descripcion-imagen ${confContraste ? 'contraste-aumentado' : ''}`}> {reportaje.contenido.descripcionImagen1} </div>
-            </div>
+            </header>
             <hr className={`reportaje-divisor ${confContraste ? 'border-top-contraste' : ''}`}/>
             
             {/* CUERPO 1 */}
@@ -47,14 +47,14 @@ function Reportaje( {tamañoTexto, confContraste}){
             {/* TEXTO C IMAGEN 1*/}
             <div className="reportaje-contenedor-texto-con-imagen">
                 <div className="reportaje-contenedor-imagen" style={{paddingTop: '0px', paddingBottom: '0px'}}>
-                    <div className="reportaje-imagen" >
-                        <img src={reportaje.contenido.imagen2} alt="" />
-                    </div>
+                    <figure style={{margin:'0'}} className="reportaje-imagen" >
+                        <img src={reportaje.contenido.imagen2} alt={reportaje.contenido.descripcionImagen2} />
+                    </figure>
                     <div className={`descripcion-imagen ${confContraste ? 'contraste-aumentado' : ''}`}> {reportaje.contenido.descripcionImagen2} </div>
                 </div>
-                <div className="reportaje-contenedor-texto-de-imagen" style={{paddingTop: '0px', paddingBottom: '0px'}}>
+                <p className="reportaje-contenedor-texto-de-imagen" style={{paddingTop: '0px', paddingBottom: '0px', margin:'0'}}>
                     {reportaje.contenido.textoImagen2}
-                </div>
+                </p>
             </div>
 
             {/* CUERPO 2 */}
@@ -66,25 +66,25 @@ function Reportaje( {tamañoTexto, confContraste}){
 
             {/* TEXTO C IMAGEN 2*/}
             <div className="reportaje-contenedor-texto-con-imagen">
-                <div className="reportaje-contenedor-texto-de-imagen" style={{paddingTop: '0px', paddingBottom: '20px'}}>
+                <p className="reportaje-contenedor-texto-de-imagen" style={{paddingTop: '0px', paddingBottom: '20px', margin:'0'}}>
                     {reportaje.contenido.textoImagen3}
-                </div>
+                </p>
                 <div className="reportaje-contenedor-imagen" style={{paddingTop: '0px', paddingBottom: '20px'}}>
-                    <div className="reportaje-imagen" >
-                        <img src={reportaje.contenido.imagen3} alt="" />
-                    </div>
+                    <figure style={{margin:'0'}} className="reportaje-imagen" >
+                        <img src={reportaje.contenido.imagen3} alt=" {reportaje.contenido.descripcionImagen3}" />
+                    </figure>
                     <div className={`descripcion-imagen ${confContraste ? 'contraste-aumentado' : ''}`}> {reportaje.contenido.descripcionImagen3}</div>
                 </div>
             </div>
             <hr className={`reportaje-divisor ${confContraste ? 'border-top-contraste' : ''}`}/>
             
             {/* FOOTER */}
-            <div className="footer-reportaje">
-                <div className={`autor-reportaje ${confContraste ? 'contraste-aumentado' : ''}`}>
+            <footer className="footer-reportaje">
+                <div aria-label="Autor del reportaje" className={`autor-reportaje ${confContraste ? 'contraste-aumentado' : ''}`}>
                     Escrito por: <span> {reportaje.contenido.autor} </span> 
                 </div>
-                <div className={`fecha-reportaje ${confContraste ? 'contraste-aumentado' : ''}`}> {reportaje.contenido.fecha} </div>
-            </div>
+                <div aria-label="Fecha de hoy" className={`fecha-reportaje ${confContraste ? 'contraste-aumentado' : ''}`}> {reportaje.contenido.fecha} </div>
+            </footer>
         </div>
     )
 }

@@ -44,9 +44,9 @@ function Cabezal({ esMovil, tamañoTexto, setTamañoTexto, confContraste, setCon
 
   return (
     <div style={{ '--font-size-multiplier': tamañoTexto }}>
-      <div className={`cabezal ${confContraste ? 'border-bottom-contraste' : ''}`}>
-        <FechaDeHoy confContraste={confContraste} />
-        <div id="titulo-pagina">DIARIO</div>
+      <header className={`cabezal ${confContraste ? 'border-bottom-contraste' : ''}`}>
+        <time> <FechaDeHoy confContraste={confContraste}/> </time>
+        <h1 id="titulo-pagina">DIARIO</h1>
         <BotonAjustes
           esMovil={esMovil}
           tamañoTexto={tamañoTexto}
@@ -54,27 +54,27 @@ function Cabezal({ esMovil, tamañoTexto, setTamañoTexto, confContraste, setCon
           confContraste={confContraste}
           setConfContraste={setConfContraste}
         />
-      </div>
+      </header>
 
       {!esMovil && (
-        <div className={`barra-navegacion nav-1 ${confContraste ? 'contraste-aumentado border-bottom-contraste' : ''}`}>
+        <nav aria-label="Navegación de categorías." className={`barra-navegacion nav-1 ${confContraste ? 'contraste-aumentado border-bottom-contraste' : ''}`}>
           <Link to="/" className="boton-navegacion btn-grande">INICIO</Link>
           <Link to="/política" className="boton-navegacion">POLÍTICA</Link>
           <Link to="/economía" className="boton-navegacion">ECONOMÍA</Link>
           <Link to="/deportes" className="boton-navegacion">DEPORTES</Link>
           <Link to="/mundo" className="boton-navegacion">MUNDO</Link>
           <Link to="/entretenimiento" className="boton-navegacion">ENTRETENIMIENTO</Link>
-        </div>
+        </nav>
       )}
 
       {!esMovil && (
-        <div className={`barra-navegacion nav-2 ${confContraste ? 'contraste-aumentado border-bottom-contraste' : ''}`}>
+        <nav aria-label="Navegación de tipos de noticia." className={`barra-navegacion nav-2 ${confContraste ? 'contraste-aumentado border-bottom-contraste' : ''}`}>
           <button className={`boton-navegacion ${confContraste ? 'contraste-aumentado-rojo' : 'btn-gris'}`} onClick={() => handleTipoClick('TODO')}>TODO</button>
           <button className={`boton-navegacion ${confContraste ? 'contraste-aumentado-rojo' : 'btn-gris'}`} onClick={() => handleTipoClick('articulo')}>ARTÍCULOS</button>
           <button className={`boton-navegacion ${confContraste ? 'contraste-aumentado-rojo' : 'btn-gris'}`} onClick={() => handleTipoClick('reportaje')}>REPORTAJES</button>
           <button className={`boton-navegacion ${confContraste ? 'contraste-aumentado-rojo' : 'btn-gris'}`} onClick={() => handleTipoClick('video')}>VIDEOS</button>
           <button className={`boton-navegacion ${confContraste ? 'contraste-aumentado-rojo' : 'btn-gris'}`} onClick={() => handleTipoClick('podcast')}>PODCASTS</button>
-        </div>
+        </nav>
       )}
 
         {esMovil && (
@@ -82,13 +82,20 @@ function Cabezal({ esMovil, tamañoTexto, setTamañoTexto, confContraste, setCon
                   <button
                     className={`boton-dropdown-1 ${confContraste ? 'border-bottom-contraste border-right-contraste' : ''}`}
                     onClick={toggleDropdown}
+                    aria-expanded={dropdownVisible}
+                    aria-controls="menu-categorias"
                   >
                     CATEGORÍAS
                   </button>
                   {dropdownVisible && (
-                    <div className="dropdown-content">
+                    <div id="menu-categorias" role="menu" className="dropdown-content">
                       {categorias.map((categoria, index) => (
-                        <Link to={categoria.ruta} key={index} className={`dropdown-item ${confContraste ? 'contraste-aumentado border-bottom-contraste' : ''}`} onClick={handleCategoryClick}>
+                        <Link to={categoria.ruta} 
+                          key={index} 
+                          className={`dropdown-item ${confContraste ? 'contraste-aumentado border-bottom-contraste' : ''}`} 
+                          onClick={handleCategoryClick}
+                          role="menuitem"
+                          >
                           {categoria.nombre}
                         </Link>
                       ))}
@@ -96,16 +103,39 @@ function Cabezal({ esMovil, tamañoTexto, setTamañoTexto, confContraste, setCon
                   )}
                   <button 
                   className={`boton-dropdown-2 ${confContraste ? 'border-bottom-contraste' : ''}`}
-                    onClick={toggleDropdown2}>
+                    onClick={toggleDropdown2}
+                    aria-expanded={dropdownVisible}
+                    aria-controls="menu-tipos"
+                  >
                     TIPO DE CONTENIDO
                   </button>
                   {dropdown2Visible && (
-                    <div className="dropdown2-content">
-                      <button className={`dropdown-item dropdown2-override ${confContraste ? 'contraste-aumentado border-bottom-contraste' : ''}`} onClick={() => handleTipoClick('TODO')}>TODO</button>
-                      <button className={`dropdown-item dropdown2-override ${confContraste ? 'contraste-aumentado border-bottom-contraste' : ''}`} onClick={() => handleTipoClick('articulo')}>ARTÍCULOS</button>
-                      <button className={`dropdown-item dropdown2-override ${confContraste ? 'contraste-aumentado border-bottom-contraste' : ''}`} onClick={() => handleTipoClick('reportaje')}>REPORTAJES</button>
-                      <button className={`dropdown-item dropdown2-override ${confContraste ? 'contraste-aumentado border-bottom-contraste' : ''}`} onClick={() => handleTipoClick('video')}>VIDEOS</button>
-                      <button className={`dropdown-item dropdown2-override ${confContraste ? 'contraste-aumentado border-bottom-contraste' : ''}`} onClick={() => handleTipoClick('podcast')}>PODCASTS</button>
+                    <div className="dropdown2-content" id="menu-tipos" role="menu">
+                      <button className={`dropdown-item dropdown2-override ${confContraste ? 'contraste-aumentado border-bottom-contraste' : ''}`} 
+                        onClick={() => handleTipoClick('TODO')} 
+                        role="menuitem"
+                        aria-label="Mostrar todo el contenido"
+                        >TODO</button>
+                      <button className={`dropdown-item dropdown2-override ${confContraste ? 'contraste-aumentado border-bottom-contraste' : ''}`} 
+                        onClick={() => handleTipoClick('articulo')} 
+                        role="menuitem"
+                        aria-label="Mostrar solo artículos"
+                        >ARTÍCULOS</button>
+                      <button className={`dropdown-item dropdown2-override ${confContraste ? 'contraste-aumentado border-bottom-contraste' : ''}`} 
+                        onClick={() => handleTipoClick('reportaje')} 
+                        role="menuitem"
+                        aria-label="Mostrar solo reportajes"
+                        >REPORTAJES</button>
+                      <button className={`dropdown-item dropdown2-override ${confContraste ? 'contraste-aumentado border-bottom-contraste' : ''}`} 
+                        onClick={() => handleTipoClick('video')} 
+                        role="menuitem"
+                        aria-label="Mostrar solo videos"
+                        >VIDEOS</button>
+                      <button className={`dropdown-item dropdown2-override ${confContraste ? 'contraste-aumentado border-bottom-contraste' : ''}`} 
+                        onClick={() => handleTipoClick('podcast')} 
+                        role="menuitem"
+                        aria-label="Mostrar solo podcasts"
+                        >PODCASTS</button>
                     </div>
                   )}
                 </div>

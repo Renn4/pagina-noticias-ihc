@@ -38,22 +38,37 @@ function BotonAjustes({ esMovil, tamañoTexto,  setTamañoTexto, confContraste, 
     return(
         <>
             {!esMovil ? (
-                <button className='boton-ajustes' ref={buttonRef} onClick={abrirMenu}> AJUSTES <div className="chevron"/> </button>
+                <button
+                    className='boton-ajustes' 
+                    ref={buttonRef} 
+                    onClick={abrirMenu} 
+                    aria-expanded={isOpen}
+                    aria-controls="menu-ajustes"
+                > AJUSTES <div className="chevron"/> 
+                </button>
             ) 
             : (
-                <button className='boton-ajustes-movil' ref={buttonRef} onClick={abrirMenu}> <SettingsIcon/> </button>
+                <button 
+                    className='boton-ajustes-movil' 
+                    ref={buttonRef} 
+                    onClick={abrirMenu}
+                    aria-expanded={isOpen}
+                    aria-controls="menu-ajustes"
+                > <SettingsIcon/> 
+                </button>
             )
             }
             
 
             {isOpen && (
-                <div className="modal-overlay" onClick={cerrarMenu}>
+                <div className="modal-overlay" onClick={cerrarMenu} role="dialog">
                     <div className="modal-content" 
                         onClick={(e) => e.stopPropagation()}
                         style={{ top: `${modalPosition.top}px`, left: `${modalPosition.left}px`, '--font-size-multiplier': tamañoTexto }}>
-                        <button className="btn-cerrar-modal" onClick={cerrarMenu}>&times;</button>
-
-                        <span className="nombre-configuracion"> Contraste de texto</span>
+                        <button className="btn-cerrar-modal" onClick={cerrarMenu} aria-label="Cerrar ajustes">&times;</button>
+                        
+                        <fieldset>
+                        <legend className="nombre-configuracion"> Contraste de texto</legend>
                         <ul className="lista-opciones">
                             <li className="opcion">
                                 <input 
@@ -78,10 +93,11 @@ function BotonAjustes({ esMovil, tamañoTexto,  setTamañoTexto, confContraste, 
                                 <label htmlFor="contraste-elevado"> Elevado </label>
                             </li>
                         </ul>
+                        </fieldset>
 
-                        <hr className="divisor-opciones"/>
 
-                        <span className="nombre-configuracion">Tamaño de texto</span>
+                        <fieldset>
+                        <legend className="nombre-configuracion">Tamaño de texto</legend>
                         <ul className="lista-opciones">
                             <li className="opcion">
                                 <input
@@ -117,6 +133,7 @@ function BotonAjustes({ esMovil, tamañoTexto,  setTamañoTexto, confContraste, 
                                 <label htmlFor="texto-grande"> Grande </label>
                             </li>
                         </ul>
+                        </fieldset>
                     
                     </div>
                 </div>

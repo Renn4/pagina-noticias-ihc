@@ -2,36 +2,37 @@ import React from 'react';
 import './CartaNoticiaMobile.css'
 import { Link } from 'react-router-dom';
 import noticias from '../data/noticias';
+import { Margin } from '@mui/icons-material';
 
 function CartaNoticiaMobile( {tamañoTexto, confContraste, contenido, noticia}) {
     return(
         <Link to={`/${contenido.tipo}/${noticia.id}`} className='unstyled-link'>
-        <div className={`carta-noticia-mobile ${confContraste ? 'carta-noticia-borde-contraste' : ''}`} style={{ '--font-size-multiplier': tamañoTexto }}> 
+        <article className={`carta-noticia-mobile ${confContraste ? 'carta-noticia-borde-contraste' : ''}`} style={{ '--font-size-multiplier': tamañoTexto }}> 
 
-            <div className='imagen-noticia-mobile'>
-                <img src={contenido.imagen} alt="" />
-            </div>
+            <figure className='imagen-noticia-mobile' style={{margin:'0'}}>
+                <img src={contenido.imagen} alt={contenido.descripcionDeImagen} />
+            </figure>
 
-            <div className='titulo-noticia-mobile'>
+            <h3 className='titulo-noticia-mobile'>
                 {contenido.titulo}
-            </div>
+            </h3>
             
             <hr />
 
-            <div className='parrafo-noticia-mobile'>
+            <p className='parrafo-noticia-mobile' style={{margin:'0'}}>
                 {contenido.parrafo}
-            </div>
+            </p>
 
             <div className='padding-footer-noticia-mobile'></div>
-            <div className='footer-noticia-mobile'>
-                <div className={`tema-noticia-mobile ${confContraste ? 'contraste-aumentado-rojo' : ''}`}>
+            <footer className='footer-noticia-mobile'>
+                <span className={`tema-noticia-mobile ${confContraste ? 'contraste-aumentado-rojo' : ''}`}>
                     {contenido.categoria}
-                </div>
-                <div className='tipo-contenido-noticia-mobile'>
+                </span>
+                <span className='tipo-contenido-noticia-mobile'>
                     {contenido.tipo}
-                </div>
-            </div>
-        </div>
+                </span>
+            </footer>
+        </article>
         </Link>
     )
 }

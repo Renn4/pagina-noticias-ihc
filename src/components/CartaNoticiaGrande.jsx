@@ -6,46 +6,46 @@ import noticias from '../data/noticias';
 function CartaNoticiaGrande({tamañoTexto, confContraste, contenido, noticia}) {
     return(
         
-        <div className={`carta-noticia-grande ${confContraste ? 'carta-noticia-borde-contraste' : ''} ${(tamañoTexto === '1.4') ? 'carta-grande-vertical' : ''}`} 
+        <article aria-label={`Ir a la noticia titulada ${contenido.titulo}`} className={`carta-noticia-grande ${confContraste ? 'carta-noticia-borde-contraste' : ''} ${(tamañoTexto === '1.2' || tamañoTexto === '1.4') ? 'carta-grande-vertical' : ''}`} 
              style={{ '--font-size-multiplier': tamañoTexto }}>
-            <Link to={`/${contenido.tipo}/${noticia.id}`} className={`unstyled-link-grande  ${(tamañoTexto === '1.4') ? 'carta-grande-vertical' : ''}`} >
-            <div className={`info-noticia-grande ${(tamañoTexto === '1.4') ? 'info-noticia-grande-vertical' : ''}`}>
+            <Link to={`/${contenido.tipo}/${noticia.id}`} className={`unstyled-link-grande  ${(tamañoTexto === '1.2' || tamañoTexto === '1.4') ? 'carta-grande-vertical' : ''}`} >
+            <article className={`info-noticia-grande ${(tamañoTexto === '1.2' || tamañoTexto === '1.4') ? 'info-noticia-grande-vertical' : ''}`}>
 
-                <div className='titulo-noticia-grande'>
+                <h3 className='titulo-noticia-grande'>
                 {contenido.titulo}
-                </div>
+                </h3>
                 
                 <hr />
 
-                <div className='parrafo-noticia-grande'>
+                <p className='parrafo-noticia-grande' style={{margin: '0'}}>
                     {contenido.parrafo}
-                </div>
+                </p>
 
-                <div className={`parrafo-secundario-noticia-grande ${confContraste ? 'contraste-aumentado' : ''}`}>
+                <p className={`parrafo-secundario-noticia-grande ${confContraste ? 'contraste-aumentado' : ''}`} style={{margin: '0'}}>
                     {contenido.parrafoSecundario}
-                </div>
+                </p>
 
-                <div className={`autor-noticia-grande ${confContraste ? 'contraste-aumentado' : ''}`}>
+                <span className={`autor-noticia-grande ${confContraste ? 'contraste-aumentado' : ''}`}>
                     
                     <span> - </span> {contenido.autor}
-                </div>
+                </span>
 
-                <div className='footer-noticia-grande'>
-                    <div className={`tema-noticia-grande ${confContraste ? 'contraste-aumentado-rojo' : ''}`}>
+                <footer className='footer-noticia-grande'>
+                    <span className={`tema-noticia-grande ${confContraste ? 'contraste-aumentado-rojo' : ''}`}>
                         {contenido.categoria}
-                    </div>
-                    <div className='tipo-contenido-noticia-grande'>
+                    </span>
+                    <span className='tipo-contenido-noticia-grande'>
                         {contenido.tipo}
-                    </div>
-                </div>
+                    </span>
+                </footer>
 
-            </div>
+            </article>
 
-            <div className={`imagen-noticia-grande ${(tamañoTexto === '1.4') ? 'imagen-noticia-grande-vertical' : ''}`}>
+            <figure className={`imagen-noticia-grande ${(tamañoTexto === '1.2' || tamañoTexto === '1.4') ? 'imagen-noticia-grande-vertical' : ''}`}>
                 <img src={contenido.imagen} alt={contenido.descripcionDeImagen} />
-            </div></Link>
+            </figure></Link>
             
-        </div>
+        </article>
        
     )
 }

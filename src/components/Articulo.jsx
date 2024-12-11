@@ -22,18 +22,18 @@ function Articulo( {tamañoTexto, confContraste}){
     return(
 
         <div className={`contenedor-articulo ${confContraste ? 'border-contraste' : ''}`} style={{ '--font-size-multiplier': tamañoTexto }}>
-            <div className="titulo-noticia-articulo"> 
+            <h2 className="titulo-noticia-articulo"> 
                  {articulo.contenido.titulo}
-                </div>
+            </h2>
             <hr className={`articulo-divisor ${confContraste ? 'border-top-contraste' : ''}`}/>
             <div className="articulo-contenedor-cabezal">
-                <div className="articulo-contenedor-introduccion">
+                <p style={{margin:'0'}} className="articulo-contenedor-introduccion">
                     {articulo.contenido.introduccion}
-                </div>
+                </p>
                 <div className="articulo-contenedor-imagen">
-                    <div className="articulo-imagen">
+                    <figure style={{margin:'0'}} className="articulo-imagen">
                         <img src={articulo.contenido.imagen} alt={articulo.contenido.descripcionDeImagen} />
-                    </div>
+                    </figure>
                     <div className={`descripcion-imagen ${confContraste ? 'contraste-aumentado' : ''}`}> {articulo.contenido.descripcionDeImagen} </div>
                 </div>
             </div>
@@ -44,12 +44,12 @@ function Articulo( {tamañoTexto, confContraste}){
             </p>
             </div>
             <hr className={`articulo-divisor ${confContraste ? 'border-top-contraste' : ''}`}/>
-            <div className="footer-articulo">
-                <div className={`autor-articulo ${confContraste ? 'contraste-aumentado' : ''}`}>
+            <footer className="footer-articulo">
+                <span aria-label="autor del artículo" className={`autor-articulo ${confContraste ? 'contraste-aumentado' : ''}`}>
                     ESCRITO POR: <span> {articulo.contenido.autor} </span> 
-                </div>
-                <div className={`fecha-articulo ${confContraste ? 'contraste-aumentado' : ''}`}> {articulo.contenido.fecha} </div>
-            </div>
+                </span>
+                <span aria-label="fecha de hoy" className={`fecha-articulo ${confContraste ? 'contraste-aumentado' : ''}`}> {articulo.contenido.fecha} </span>
+            </footer>
         </div>
     )
 }

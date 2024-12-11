@@ -12,7 +12,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 function App() {
 
   const [esMovil, setEsMovil] = useState(window.innerWidth < 1440);
-  const [tamañoTexto, setTamañoTexto] = useState(1);
+  const [tamañoTexto, setTamañoTexto] = useState(1.2);
   const [confContraste, setConfContraste] = useState(false);
   const [tipoContenido, setTipoContenido] = useState("TODO");
 

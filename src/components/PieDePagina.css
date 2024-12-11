@@ -3,7 +3,7 @@
     height: min-content;
     border-top: 3px dotted #d7d7d7;
     padding: 60px 40px;
-    color: #9b9b9b;
+    color: rgb(141, 141, 141);
     font-size: calc(18px * var(--font-size-multiplier, 1));
 }
 

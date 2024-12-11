@@ -5,33 +5,33 @@ import noticias from '../data/noticias';
 
 function CartaNoticia({tamañoTexto, confContraste, contenido, noticia}) {
     return(
-        <Link to={`/${contenido.tipo}/${noticia.id}`} className='unstyled-link'>
-        <div className={`carta-noticia ${confContraste ? 'carta-noticia-borde-contraste' : ''}`} style={{ '--font-size-multiplier': tamañoTexto }}> 
+        <Link to={`/${contenido.tipo}/${noticia.id}`} className='unstyled-link' aria-label={`Ir a la noticia titulada ${contenido.titulo}`}>
+        <article className={`carta-noticia ${confContraste ? 'carta-noticia-borde-contraste' : ''}`} style={{ '--font-size-multiplier': tamañoTexto }}> 
 
-            <div className='imagen-noticia'>
+            <figure className='imagen-noticia'>
                 <img src={contenido.imagen} alt={contenido.descripcionDeImagen} />
-            </div>
+            </figure>
             
-            <div className='titulo-noticia' >
+            <h2 className='titulo-noticia' >
             {contenido.titulo}
-            </div>
+            </h2>
             
             <hr />
 
-            <div className='parrafo-noticia'>
+            <p className='parrafo-noticia' style={{margin:'0'}}>
                 {contenido.parrafo}
-            </div>
+            </p>
 
             <div className='padding-footer-noticia'></div>
-            <div className='footer-noticia'>
-                <div className={`tema-noticia ${confContraste ? 'contraste-aumentado-rojo' : ''}`}>
+            <footer className='footer-noticia'>
+                <span className={`tema-noticia ${confContraste ? 'contraste-aumentado-rojo' : ''}`}>
                     {contenido.categoria}
-                </div>
-                <div className='tipo-contenido-noticia'>
+                </span>
+                <span className='tipo-contenido-noticia'>
                     {contenido.tipo}
-                </div>
-            </div>
-        </div>
+                </span>
+            </footer>
+        </article>
         </Link>
     )
 }

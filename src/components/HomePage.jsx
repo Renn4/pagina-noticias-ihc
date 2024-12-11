@@ -89,11 +89,11 @@ const HomePage = ({ tamañoTexto, confContraste, esMovil, tipoContenido }) => {
   return (
     <>
       <div className="cabezal-seccion" style={{ '--font-size-multiplier': tamañoTexto }}>
-        <div id="titulo-seccion">
+        <h2 id="titulo-seccion" style={{margin:'0'}}>
           {categoriaSeleccionada === 'Todas'
             ? 'Todas las Noticias'
             : `Noticias de ${categoriaSeleccionada}`}
-        </div>
+        </h2>
           
       </div>
            
