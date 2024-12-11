@@ -72,6 +72,18 @@ box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 z-index: 1;
 }
 
+.dropdown2-content {
+    display: flex;
+    width: 50%;
+    flex-direction: column; /* Para mostrar los elementos en vertical */
+    position: absolute;
+    top: 100%; /* Para que aparezca justo debajo del botón */
+    right: 0;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
 .dropdown-item {
 border-bottom: 3px dotted rgb(207, 207, 207);
 text-align: center;
@@ -79,6 +91,12 @@ padding: 15px 15px;
 text-decoration: none;
 color: black;
 font-size: calc(20px * var(--font-size-multiplier, 1));
+}
+
+.dropdown2-override{
+    background-color: white;
+    color: black !important;
+    
 }
 
 .dropdown-item:hover {

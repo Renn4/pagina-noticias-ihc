@@ -10,13 +10,22 @@ function Cabezal({ esMovil, tamañoTexto, setTamañoTexto, confContraste, setCon
   const [mostrarCategorias, setMostrarCategorias] = useState(false);
 
   const [dropdownVisible, setDropdownVisible] = useState(false);
+  const [dropdown2Visible, setDropdown2Visible] = useState(false);
 
   const toggleDropdown = () => {
     setDropdownVisible(!dropdownVisible);
   };
 
+  const toggleDropdown2 = () => {
+    setDropdown2Visible(!dropdown2Visible);
+  };
+
   const handleCategoryClick = () => {
     setDropdownVisible(false); // Cierra el dropdown al hacer clic en una categoría
+  };
+
+  const handleTypeClick = () => {
+    setDropdown2Visible(false); // Cierra el dropdown al hacer clic en una categoría
   };
 
   const categorias = [
@@ -30,6 +39,7 @@ function Cabezal({ esMovil, tamañoTexto, setTamañoTexto, confContraste, setCon
 
   const handleTipoClick = (tipo) => {
     setTipoContenido(tipo); // Cambiar el tipo de contenido
+    setDropdown2Visible(false);
   };
 
   return (
@@ -84,9 +94,20 @@ function Cabezal({ esMovil, tamañoTexto, setTamañoTexto, confContraste, setCon
                       ))}
                     </div>
                   )}
-                  <button className={`boton-dropdown-2 ${confContraste ? 'border-bottom-contraste' : ''}`}>
+                  <button 
+                  className={`boton-dropdown-2 ${confContraste ? 'border-bottom-contraste' : ''}`}
+                    onClick={toggleDropdown2}>
                     TIPO DE CONTENIDO
                   </button>
+                  {dropdown2Visible && (
+                    <div className="dropdown2-content">
+                      <button className={`dropdown-item dropdown2-override ${confContraste ? 'contraste-aumentado border-bottom-contraste' : ''}`} onClick={() => handleTipoClick('TODO')}>TODO</button>
+                      <button className={`dropdown-item dropdown2-override ${confContraste ? 'contraste-aumentado border-bottom-contraste' : ''}`} onClick={() => handleTipoClick('articulo')}>ARTÍCULOS</button>
+                      <button className={`dropdown-item dropdown2-override ${confContraste ? 'contraste-aumentado border-bottom-contraste' : ''}`} onClick={() => handleTipoClick('reportaje')}>REPORTAJES</button>
+                      <button className={`dropdown-item dropdown2-override ${confContraste ? 'contraste-aumentado border-bottom-contraste' : ''}`} onClick={() => handleTipoClick('video')}>VIDEOS</button>
+                      <button className={`dropdown-item dropdown2-override ${confContraste ? 'contraste-aumentado border-bottom-contraste' : ''}`} onClick={() => handleTipoClick('podcast')}>PODCASTS</button>
+                    </div>
+                  )}
                 </div>
               )}
     </div>

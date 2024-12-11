@@ -38,6 +38,7 @@
 
 .carta-grande-vertical{
     flex-direction: column-reverse !important;
+    height: fit-content;
 }
 
 .info-noticia-grande-vertical{
@@ -74,6 +75,7 @@
 .titulo-noticia-grande{
     font-size: calc(25px * var(--font-size-multiplier, 1));
     padding-bottom: 7px;
+    color: #BD5050;
 }
 
 .carta-noticia-grande hr{

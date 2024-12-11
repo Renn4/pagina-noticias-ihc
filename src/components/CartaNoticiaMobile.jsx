@@ -8,7 +8,9 @@ function CartaNoticiaMobile( {tamañoTexto, confContraste, contenido, noticia}) 
         <Link to={`/${contenido.tipo}/${noticia.id}`} className='unstyled-link'>
         <div className={`carta-noticia-mobile ${confContraste ? 'carta-noticia-borde-contraste' : ''}`} style={{ '--font-size-multiplier': tamañoTexto }}> 
 
-            <div className='imagen-noticia-mobile'></div>
+            <div className='imagen-noticia-mobile'>
+                <img src={contenido.imagen} alt="" />
+            </div>
 
             <div className='titulo-noticia-mobile'>
                 {contenido.titulo}

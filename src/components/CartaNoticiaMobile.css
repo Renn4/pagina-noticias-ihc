@@ -22,6 +22,13 @@
     background-color: rgb(236, 236, 236);
 }   
 
+.imagen-noticia-mobile img{
+    width: 100%;         /* Make the image fill the width of the container */
+    height: 100%;        /* Make the image fill the height of the container */
+    object-fit: cover;   /* Ensures the image fills the container without stretching, while maintaining aspect ratio */
+    object-position: center; /* Optionally centers the image within the container */
+}
+
 .titulo-noticia-mobile{
     font-size: calc(25px * var(--font-size-multiplier, 1));
     padding: 7px 0px;
